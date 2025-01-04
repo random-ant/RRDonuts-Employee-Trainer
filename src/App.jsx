@@ -1,35 +1,37 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from "react";
+import MenuPanel from "./MenuPanel";
+import OrderPanel from "./OrderPanel";
+import { OrderContext, QuantityContext } from "./context";
+import "./styles.css";
 
-function App() {
-  const [count, setCount] = useState(0)
+export default function App() {
+  const [order, setOrder] = useState(new Map());
+  const [itemQuantity, setItemQuantity] = useState(1);
 
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+      <QuantityContext.Provider value={{ itemQuantity, setItemQuantity }}>
+        <OrderContext.Provider value={{ order, setOrder }}>
+          <div className="container">
+            <div class="side-container">
+              <button>CANCEL ORDER</button>
+              <button>NAME TAB</button>
+              <button>NEW ORDER</button>
+              <button>DELETE</button>
+              <button>QUANTITY</button>
+              <button>MODIFY</button>
+              <button>TO TENDERS</button>
+              <button>CREDIT CARD</button>
+              <button>TO HOME</button>
+              <button>FUNCTION</button>
+            </div>
 
-export default App
+            <MenuPanel />
+
+            <OrderPanel />
+          </div>
+        </OrderContext.Provider>
+      </QuantityContext.Provider>
+    </>
+  );
+}
