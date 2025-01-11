@@ -10,7 +10,7 @@
   width: 100vw;
   background-color: #f8f6f6;
   display: grid;
-  grid-template-columns: 100px 1fr 30%;
+  grid-template-columns: 100px 1fr 400px;
   grid-template-rows: 1fr; /* Equal height rows */
   gap: 10px;
   box-sizing: border-box;

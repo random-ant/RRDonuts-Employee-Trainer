@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { OrderContext, QuantityContext } from "./context";
 import "./menu.css";
 
-export default function MenuItem({ color, children }) {
+export default function MenuItem({ color = "rgb(235, 235, 235)", children }) {
   const { order, setOrder } = useContext(OrderContext);
   const { itemQuantity, setItemQuantity } = useContext(QuantityContext);
 
