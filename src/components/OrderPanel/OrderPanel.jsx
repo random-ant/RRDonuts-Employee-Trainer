@@ -1,5 +1,6 @@
 import { useState, useContext } from "react";
-import { OrderContext, SelectedItemsContext } from "./context";
+import { OrderContext, SelectedItemsContext } from "../../helpers/context";
+import "./orders.css";
 
 export default function OrderPanel(props) {
   const { order, setOrder } = useContext(OrderContext);

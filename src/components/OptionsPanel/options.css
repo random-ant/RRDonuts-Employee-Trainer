@@ -1,0 +1,21 @@
+.option-container {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #ccc;
+  padding: 5px;
+  box-sizing: border-box;
+}
+
+.option-container > button {
+  flex: 1;
+  width: 100%;
+  margin: 5px 0;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 14px;
+  font-weight: bold;
+  border-radius: 10px;
+  border: 1px solid #000;
+  cursor: pointer;
+}

@@ -1,0 +1,24 @@
+.order-container {
+  padding: 10px;
+  background-color: rgb(206, 206, 206);
+  overflow-y: scroll;
+}
+
+.order-item {
+  padding-bottom: 24px;
+  color: rgb(0, 51, 255);
+  cursor: pointer;
+}
+
+.order-item:hover {
+  filter: brightness(85%);
+}
+
+.selected-item {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.order-modifications {
+  padding-left: 30px;
+  color: rgb(0, 51, 255);
+}

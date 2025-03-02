@@ -1,7 +1,8 @@
 import { useContext } from "react";
-import { OrderContext, SelectedItemsContext } from "./context";
+import { OrderContext, SelectedItemsContext } from "../../helpers/context";
+import "./options.css";
 
-export default function SidePanel() {
+export default function OptionsPanel() {
   const { order, setOrder } = useContext(OrderContext);
   const { selectedItems, setSelectedItems } = useContext(SelectedItemsContext);
 
@@ -11,7 +12,7 @@ export default function SidePanel() {
   };
 
   return (
-    <div className="side-container">
+    <div className="option-container">
       <button>CANCEL ORDER</button>
       <button>NAME TAB</button>
       <button>NEW ORDER</button>

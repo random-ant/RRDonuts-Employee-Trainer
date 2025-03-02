@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { OrderContext, QuantityContext } from "./context";
+import { OrderContext, QuantityContext } from "../../helpers/context";
 import "./menu.css";
 
 export class Item {
