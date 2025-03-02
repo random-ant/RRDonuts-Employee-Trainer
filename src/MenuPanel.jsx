@@ -28,18 +28,18 @@ export default function MenuPanel() {
     <>
       <div className="menu-container">
         <div className="quantity-select-container">
-          <QuantityButton>2</QuantityButton>
-          <QuantityButton>3</QuantityButton>
-          <QuantityButton>4</QuantityButton>
-          <QuantityButton>5</QuantityButton>
-          <QuantityButton>6</QuantityButton>
-          <QuantityButton>7</QuantityButton>
-          <QuantityButton>8</QuantityButton>
-          <QuantityButton>9</QuantityButton>
-          <button>MEMO</button>
+          <QuantityButton count={2} />
+          <QuantityButton count={3} />
+          <QuantityButton count={4} />
+          <QuantityButton count={5} />
+          <QuantityButton count={6} />
+          <QuantityButton count={7} />
+          <QuantityButton count={8} />
+          <QuantityButton count={9} />
+          <button id="memo-button">MEMO</button>
         </div>
 
-        <div class="menu-buttons-container">{renderPage()}</div>
+        <div className="menu-buttons-container">{renderPage()}</div>
 
         <div className="menu-page-select">
           <button id="credit-card">CREDIT CARD</button>
@@ -80,12 +80,23 @@ export default function MenuPanel() {
   );
 }
 
-function QuantityButton({ children }) {
+function QuantityButton({ count }) {
   const { itemQuantity, setItemQuantity } = useContext(QuantityContext);
 
   return (
-    <button class="quantity-button" onClick={() => setItemQuantity(+children)}>
-      {children}
+    <button
+      className={`quantity-button ${
+        itemQuantity == count ? "active-quantity" : ""
+      }`}
+      onClick={() => {
+        if (itemQuantity == count) {
+          setItemQuantity(1);
+        } else {
+          setItemQuantity(+count);
+        }
+      }}
+    >
+      {count}
     </button>
   );
 }

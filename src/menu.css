@@ -26,6 +26,18 @@
   cursor: pointer;
 }
 
+.active-quantity {
+  filter: brightness(90%);
+  border-color: aqua;
+}
+
+#memo-button {
+  border-radius: 10px;
+  font-size: 18px;
+  cursor: pointer;
+  background-color: rgb(1, 235, 243);
+}
+
 /* MENU STUFF */
 
 .menu-item {

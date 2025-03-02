@@ -4,7 +4,7 @@ import "./menu.css";
 export function DonutPage() {
   return (
     <>
-      <div class="donut-container">
+      <div className="donut-container">
         <MenuItem color="rgb(216,134,73)">GLAZED RR</MenuItem>
         <MenuItem color="rgb(132,82,60)">CHOCOLATE RR</MenuItem>
         <MenuItem color="rgb(237,186,211)">STRAW ICED</MenuItem>
@@ -33,7 +33,7 @@ export function DonutPage() {
 export function CakeDonutsPage() {
   return (
     <>
-      <div class="donut-container">
+      <div className="donut-container">
         <MenuItem>PLAIN CAKE</MenuItem>
         <MenuItem color="rgb(132,82,60)">CHOCOLATE CAKE</MenuItem>
         <MenuItem color="rgb(0,81,237)">BLUEBERRY CAKE</MenuItem>
