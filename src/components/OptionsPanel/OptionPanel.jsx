@@ -3,11 +3,13 @@ import { OrderContext, SelectedItemsContext } from "../../helpers/context";
 import "./options.css";
 
 export default function OptionsPanel() {
-  const { order, setOrder } = useContext(OrderContext);
+  const { userOrder, setUserOrder } = useContext(OrderContext);
   const { selectedItems, setSelectedItems } = useContext(SelectedItemsContext);
 
   const clickDelete = () => {
-    setOrder(order.filter((item, index) => !selectedItems.includes(index)));
+    setUserOrder(
+      userOrder.filter((item, index) => !selectedItems.includes(index))
+    );
     setSelectedItems([]);
   };
 

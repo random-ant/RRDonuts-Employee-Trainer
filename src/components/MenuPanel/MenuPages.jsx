@@ -1,30 +1,70 @@
 import MenuItem from "./MenuItem";
+import MultipleMenuItem from "./MultipleMenuItem";
 import "./menu.css";
 
 export function DonutPage() {
   return (
     <>
       <div className="donut-container">
-        <MenuItem color="rgb(216,134,73)">GLAZED RR</MenuItem>
-        <MenuItem color="rgb(132,82,60)">CHOCOLATE RR</MenuItem>
-        <MenuItem color="rgb(237,186,211)">STRAW ICED</MenuItem>
-        <MenuItem color="rgb(192,125,70)">MAPLE</MenuItem>
-        <MenuItem color="rgb(216,134,73)">DOZ RR</MenuItem>
-        <MenuItem color="rgb(132,82,60)">DOZ CHOC RR</MenuItem>
-        <MenuItem color="rgb(237,186,211)">DOZ STRAW</MenuItem>
-        <MenuItem color="rgb(192,125,70)">DOZ MAPLE</MenuItem>
-        <MenuItem color="rgb(216,134,73)">TX GLAZED</MenuItem>
-        <MenuItem color="rgb(132,82,60)">CHOC SPRINKLED</MenuItem>
-        <MenuItem color="rgb(237,186,211)">STRAW SPRINKLED</MenuItem>
-        <MenuItem color="rgb(214,97,52)">SINGLE HOLE</MenuItem>
-        <MenuItem color="rgb(132,82,60)">TX CHOCOLATE</MenuItem>
-        <MenuItem color="rgb(132,82,60)">DOZ CHOC SPRINK</MenuItem>
-        <MenuItem color="rgb(237,186,211)">DZN STRAW SPRINKLED</MenuItem>
-        <MenuItem color="rgb(214,97,52)">DOZ HOLES</MenuItem>
-        <MenuItem color="rgb(132,82,60)">TX 1/2 CHOCOLATE</MenuItem>
-        <MenuItem color="rgb(227,120,64)">1 DZ 6 GLAZED/6 CHOC</MenuItem>
-        <MenuItem color="rgb(0,158,238)">DOZ MIXED DONUTS</MenuItem>
-        <MenuItem>GRANULATED RR</MenuItem>
+        <MenuItem itemID={1} color="rgb(216,134,73)" />
+        <MenuItem itemID={2} color="rgb(132,82,60)" />
+        <MenuItem itemID={3} color="rgb(237,186,211)" />
+        <MenuItem itemID={4} color="rgb(192,125,70)" />
+        <MultipleMenuItem
+          itemID={1}
+          multiplier={12}
+          display_name="DOZ RR"
+          color="rgb(216,134,73)"
+        />
+        <MultipleMenuItem
+          itemID={2}
+          multiplier={12}
+          display_name="DOZ CHOC RR"
+          color="rgb(132,82,60)"
+        />
+        <MultipleMenuItem
+          itemID={3}
+          multiplier={12}
+          display_name="DOZ STRAW"
+          color="rgb(237,186,211)"
+        />
+        <MultipleMenuItem
+          itemID={4}
+          multiplier={12}
+          display_name="DOZ MAPLE"
+          color="rgb(192,125,70)"
+        />
+        <MenuItem itemID={5} color="rgb(216,134,73)" />
+        <MenuItem itemID={6} color="rgb(132,82,60)" />
+        <MenuItem itemID={7} color="rgb(237,186,211)" />
+        <MenuItem itemID={8} color="rgb(214,97,52)" />
+        <MenuItem itemID={9} color="rgb(132,82,60)" />
+        <MultipleMenuItem
+          itemID={6}
+          multiplier={12}
+          display_name="DOZ CHOC SPRINK"
+          color="rgb(132,82,60)"
+        />
+        <MultipleMenuItem
+          itemID={7}
+          multiplier={12}
+          display_name="DOZ STRAW SPRINKLED"
+          color="rgb(237,186,211)"
+        />
+        <MultipleMenuItem
+          itemID={8}
+          multiplier={12}
+          display_name="DOZ HOLES"
+          color="rgb(214,97,52)"
+        />
+        <MenuItem itemID={10} color="rgb(132,82,60)" />
+        <MultipleMenuItem
+          itemID={1}
+          display_name="CUSTOM: TODO"
+          color="rgb(227,120,64)"
+        />
+        <MenuItem itemID={11} color="rgb(0,158,238)" />
+        <MenuItem itemID={12} color="rgb(0,158,238)" />
       </div>
     </>
   );

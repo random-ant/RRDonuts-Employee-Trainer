@@ -15,12 +15,12 @@ export default function MenuPanel() {
     switch (currentPage) {
       case 1:
         return <DonutPage />;
-      case 2:
-        return <CakeDonutsPage />;
-      case 3:
-        return <FilledDonutsPage />;
-      case 4:
-        return <FrittersTwistsPage />;
+      // case 2:
+      //   return <CakeDonutsPage />;
+      // case 3:
+      //   return <FilledDonutsPage />;
+      // case 4:
+      //   return <FrittersTwistsPage />;
     }
   };
 
@@ -81,18 +81,18 @@ export default function MenuPanel() {
 }
 
 function QuantityButton({ count }) {
-  const { itemQuantity, setItemQuantity } = useContext(QuantityContext);
+  const { currItemQuantity, setCurrItemQuantity } = useContext(QuantityContext);
 
   return (
     <button
       className={`quantity-button ${
-        itemQuantity == count ? "active-quantity" : ""
+        currItemQuantity == count ? "active-quantity" : ""
       }`}
       onClick={() => {
-        if (itemQuantity == count) {
-          setItemQuantity(1);
+        if (currItemQuantity == count) {
+          setCurrItemQuantity(1);
         } else {
-          setItemQuantity(+count);
+          setCurrItemQuantity(+count);
         }
       }}
     >

@@ -24,14 +24,16 @@ export default function App() {
 }
 
 function ContextProvider({ children }) {
-  const [order, setOrder] = useState([]);
-  const [itemQuantity, setItemQuantity] = useState(1);
+  const [userOrder, setUserOrder] = useState([]);
+  const [currItemQuantity, setCurrItemQuantity] = useState(1);
   const [selectedItems, setSelectedItems] = useState([]);
 
   return (
     <SelectedItemsContext.Provider value={{ selectedItems, setSelectedItems }}>
-      <QuantityContext.Provider value={{ itemQuantity, setItemQuantity }}>
-        <OrderContext.Provider value={{ order, setOrder }}>
+      <QuantityContext.Provider
+        value={{ currItemQuantity, setCurrItemQuantity }}
+      >
+        <OrderContext.Provider value={{ userOrder, setUserOrder }}>
           {children}
         </OrderContext.Provider>
       </QuantityContext.Provider>

@@ -1,12 +1,12 @@
-import { useState, useContext } from "react";
+import { useContext } from "react";
 import { OrderContext, SelectedItemsContext } from "../../helpers/context";
 import "./orders.css";
 
-export default function OrderPanel(props) {
-  const { order, setOrder } = useContext(OrderContext);
+export default function OrderPanel() {
+  const { userOrder } = useContext(OrderContext);
   const { selectedItems, setSelectedItems } = useContext(SelectedItemsContext);
 
-  function handleClick(itemIndex) {
+  function updateSelectedItems(itemIndex) {
     if (selectedItems.includes(itemIndex)) {
       // if already selected, remove from selected
       setSelectedItems(selectedItems.filter((item) => item != itemIndex));
@@ -19,13 +19,13 @@ export default function OrderPanel(props) {
   return (
     <>
       <div className="order-container">
-        {order.map((item, index) => (
+        {userOrder.map((item, index) => (
           <div
             key={index}
             className={`order-item ${
               selectedItems.includes(index) ? "selected-item" : ""
             }`}
-            onClick={() => handleClick(index)}
+            onClick={() => updateSelectedItems(index)}
           >
             {item.quantity} {"\t"}
             {item.name}
