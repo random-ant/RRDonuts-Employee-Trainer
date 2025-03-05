@@ -3,8 +3,8 @@ import "./menu.css";
 
 export default function MultipleMenuItem({
   itemID,
-  multiplier,
-  display_name,
+  display,
+  multiplier = 12,
   color = "rgb(235, 235, 235)",
 }) {
   const { addToCart } = useOrder();
@@ -15,7 +15,7 @@ export default function MultipleMenuItem({
       onClick={() => addToCart(itemID, multiplier)}
       style={{ backgroundColor: color }}
     >
-      {display_name}
+      {display}
     </button>
   );
 }

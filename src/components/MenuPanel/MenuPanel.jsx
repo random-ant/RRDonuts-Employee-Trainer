@@ -1,11 +1,6 @@
 import { useState, useContext } from "react";
 import { QuantityContext } from "../../helpers/context";
-import {
-  DonutPage,
-  CakeDonutsPage,
-  FilledDonutsPage,
-  FrittersTwistsPage,
-} from "./MenuPages";
+import { DonutPage, CakeDonutsPage, FilledDonutsPage, FrittersTwistsPage } from "./MenuPages";
 import "./menu.css";
 
 export default function MenuPanel() {
@@ -25,7 +20,7 @@ export default function MenuPanel() {
   };
 
   return (
-    <>
+    <div className="menu-container-outer">
       <div className="menu-container">
         <div className="quantity-select-container">
           <QuantityButton count={2} />
@@ -76,7 +71,7 @@ export default function MenuPanel() {
           </button>
         </div>
       </div>
-    </>
+    </div>
   );
 }
 
@@ -85,9 +80,7 @@ function QuantityButton({ count }) {
 
   return (
     <button
-      className={`quantity-button ${
-        currItemQuantity == count ? "active-quantity" : ""
-      }`}
+      className={`quantity-button ${currItemQuantity == count ? "active-quantity" : ""}`}
       onClick={() => {
         if (currItemQuantity == count) {
           setCurrItemQuantity(1);

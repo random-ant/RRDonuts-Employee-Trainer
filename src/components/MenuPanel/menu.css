@@ -2,6 +2,13 @@
   box-sizing: border-box;
 }
 
+.menu-container-outer {
+  padding: 8px;
+  border: 1px solid #1c1c1c;
+  padding-left: 9px;
+  border-left-width: 0;
+}
+
 .menu-container {
   display: grid;
   grid-template-rows: 70px 1fr 200px;

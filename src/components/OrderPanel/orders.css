@@ -1,11 +1,17 @@
 .order-container {
-  padding: 10px;
   background-color: rgb(206, 206, 206);
+  border: 1px solid #1c1c1c;
+}
+
+.order-list-container {
   overflow-y: scroll;
+}
+.order-list-container::-webkit-scrollbar {
+  display: none; /* remove scroll bar */
 }
 
 .order-item {
-  padding-bottom: 24px;
+  padding: 8px 12px 8px 12px;
   color: rgb(0, 51, 255);
   cursor: pointer;
 }
@@ -14,8 +20,29 @@
   filter: brightness(85%);
 }
 
+.selected-item:hover {
+  filter: none;
+  background-color: aliceblue;
+}
+
 .selected-item {
   background-color: rgba(255, 255, 255, 0.3);
+}
+
+.text-order-container {
+  font-size: 16px;
+  /* font-weight: bold; */
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+.order-quantity-text {
+  width: 20px;
+  text-align: center;
+  margin-right: 10px;
+}
+.order-item-text {
+  flex-grow: 1;
 }
 
 .order-modifications {

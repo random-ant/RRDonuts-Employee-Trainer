@@ -2,11 +2,7 @@ import { useState } from "react";
 import MenuPanel from "./components/MenuPanel/MenuPanel";
 import OrderPanel from "./components/OrderPanel/OrderPanel";
 import OptionsPanel from "./components/OptionsPanel/OptionPanel";
-import {
-  OrderContext,
-  QuantityContext,
-  SelectedItemsContext,
-} from "./helpers/context";
+import { OrderContext, QuantityContext, SelectedItemsContext } from "./helpers/context";
 import "./styles.css";
 
 export default function App() {
@@ -30,9 +26,7 @@ function ContextProvider({ children }) {
 
   return (
     <SelectedItemsContext.Provider value={{ selectedItems, setSelectedItems }}>
-      <QuantityContext.Provider
-        value={{ currItemQuantity, setCurrItemQuantity }}
-      >
+      <QuantityContext.Provider value={{ currItemQuantity, setCurrItemQuantity }}>
         <OrderContext.Provider value={{ userOrder, setUserOrder }}>
           {children}
         </OrderContext.Provider>

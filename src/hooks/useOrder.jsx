@@ -3,9 +3,10 @@ import { OrderContext, QuantityContext } from "../helpers/context";
 import getItem from "../helpers/menuItems";
 
 export class OItem {
-  constructor(name, quantity) {
+  constructor(name, quantity, price) {
     this.name = name;
     this.quantity = quantity;
+    this.price = price;
     this.memo = "";
     this.separate = false;
     this.boxed = false;
@@ -25,7 +26,7 @@ export default function useOrder() {
   const addToCart = (itemID, quantityMultiplier = 1) => {
     const item = getItem(itemID);
     const amountToAdd = quantityMultiplier * currItemQuantity;
-    const itemObj = new OItem(item.display_name, amountToAdd);
+    const itemObj = new OItem(item.display_name, amountToAdd, item.price);
 
     let orderContainsItem = false;
     for (let i = 0; i < userOrder.length; i++) {
