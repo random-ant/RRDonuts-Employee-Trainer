@@ -25,7 +25,7 @@ export function DonutPage() {
         <MenuItem itemID={110} color="rgb(132,82,60)" />
         <MultipleMenuItem itemID={111} display="CUSTOM: TODO" color="rgb(227,120,64)" />
         <MenuItem itemID={111} color="rgb(0,158,238)" />
-        <MenuItem itemID={112} color="rgb(0,158,238)" />
+        <MenuItem itemID={112} />
       </div>
     </>
   );

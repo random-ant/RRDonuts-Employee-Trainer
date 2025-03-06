@@ -55,8 +55,6 @@ export default function useOrder() {
 
     // reset currItemQuantity after ordering something
     setCurrItemQuantity(1);
-
-    console.log(userOrder);
   };
 
   return { addToCart };

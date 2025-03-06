@@ -2,6 +2,7 @@ import { useState } from "react";
 import MenuPanel from "./components/MenuPanel/MenuPanel";
 import OrderPanel from "./components/OrderPanel/OrderPanel";
 import OptionsPanel from "./components/OptionsPanel/OptionPanel";
+import Footer from "./components/Footer/Footer";
 import { OrderContext, QuantityContext, SelectedItemsContext } from "./helpers/context";
 import "./styles.css";
 
@@ -10,9 +11,14 @@ export default function App() {
     <>
       <ContextProvider>
         <div className="container">
-          <OptionsPanel />
-          <MenuPanel />
-          <OrderPanel />
+          <div className="main-content">
+            <div className="panel-container">
+              <OptionsPanel />
+              <MenuPanel />
+              <OrderPanel />
+            </div>
+          </div>
+          <Footer />
         </div>
       </ContextProvider>
     </>
