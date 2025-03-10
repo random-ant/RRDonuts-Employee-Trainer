@@ -1,6 +1,6 @@
 const SOLUTION_LITERALS = [
   // customer_name, prompt, [[item_id, quantity, modifiers], ...[]]
-  ["bob", "testing", [
+  ["bob", "TEST: name bob, 5x glazed, 12x chocolate sprinkled", [
     [101, 5, []],
     [106, 12, []]
   ]]

@@ -1,13 +1,12 @@
 import { useContext } from "react";
 import { OrderContext, SelectedItemsContext } from "../../helpers/context";
-import useSolution from "../../hooks/useSolution";
-import NameButton from "../NameButton/NameButton";
+import NameButton from "./NameButton";
+import NewOrderButton from "./NewOrderButton";
 import "./options.css";
 
 export default function OptionsPanel() {
   const { userOrder, setUserOrder } = useContext(OrderContext);
   const { selectedItems, setSelectedItems } = useContext(SelectedItemsContext);
-  const { nextSolution } = useSolution();
 
   const clickDelete = () => {
     setUserOrder(userOrder.filter((item, index) => !selectedItems.includes(index)));
@@ -20,9 +19,7 @@ export default function OptionsPanel() {
         <button id="exit-button">EXIT</button>
         <button id="cancel-button">CANCEL ORDER</button>
         <NameButton />
-        <button id="new-order-button" onClick={nextSolution}>
-          NEW ORDER
-        </button>
+        <NewOrderButton />
         <button id="delete-button" onClick={clickDelete}>
           DELETE
         </button>
