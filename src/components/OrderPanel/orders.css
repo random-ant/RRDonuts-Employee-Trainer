@@ -64,7 +64,3 @@
   border-radius: 6px;
   cursor: pointer;
 }
-
-.checkout-button:active {
-  transform: translateY(1px); /* Push down effect */
-}

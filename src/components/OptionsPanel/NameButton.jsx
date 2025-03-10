@@ -16,6 +16,8 @@ export default function NameButton() {
         NAME TAB
       </button>
       <Popup isOpen={isPopupOpen} onClose={() => setPopupOpen(false)}>
+        <label>Customer Name:</label>
+        <br />
         <input type="text" value={customerName} onChange={handleInputChange} />
       </Popup>
     </>

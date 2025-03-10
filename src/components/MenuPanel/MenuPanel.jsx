@@ -37,7 +37,9 @@ export default function MenuPanel() {
         <div className="menu-buttons-container">{renderPage()}</div>
 
         <div className="menu-page-select">
-          <button id="credit-card">CREDIT CARD</button>
+          <button id="credit-card" className="disabled-button">
+            CREDIT CARD
+          </button>
           <button onClick={() => setCurrentPage(1)} id="donuts">
             DONUTS
           </button>
@@ -53,7 +55,9 @@ export default function MenuPanel() {
           <button onClick={() => setCurrentPage(5)} id="baked">
             BAKED ITEMS
           </button>
-          <button id="close-check">CLOSE CHECK</button>
+          <button id="close-check" className="disabled-button">
+            CLOSE CHECK
+          </button>
           <button onClick={() => setCurrentPage(6)} id="kolaches">
             KOLACHES
           </button>

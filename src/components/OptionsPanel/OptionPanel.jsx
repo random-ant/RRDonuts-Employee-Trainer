@@ -2,12 +2,17 @@ import { useContext } from "react";
 import { OrderContext, SelectedItemsContext } from "../../helpers/context";
 import NameButton from "./NameButton";
 import NewOrderButton from "./NewOrderButton";
+import SideQuantityButton from "./SideQuantityButton";
 import "./options.css";
 
 export default function OptionsPanel() {
   const { userOrder, setUserOrder } = useContext(OrderContext);
   const { selectedItems, setSelectedItems } = useContext(SelectedItemsContext);
 
+  const clickCancelOrder = () => {
+    setUserOrder([]);
+    setSelectedItems([]);
+  };
   const clickDelete = () => {
     setUserOrder(userOrder.filter((item, index) => !selectedItems.includes(index)));
     setSelectedItems([]);
@@ -16,19 +21,25 @@ export default function OptionsPanel() {
   return (
     <div className="option-container-outer">
       <div className="option-container-inner">
-        <button id="exit-button">EXIT</button>
-        <button id="cancel-button">CANCEL ORDER</button>
+        <button id="exit-button" className="disabled-button">
+          EXIT
+        </button>
+        <button id="cancel-button" onClick={clickCancelOrder}>
+          CANCEL ORDER
+        </button>
         <NameButton />
         <NewOrderButton />
         <button id="delete-button" onClick={clickDelete}>
           DELETE
         </button>
-        <button id="quantity-button">QUANTITY</button>
-        <button id="modify-button">MODIFY</button>
-        <button>TO TENDERS</button>
-        <button>CREDIT CARD</button>
-        <button>TO HOME</button>
-        <button>FUNCTION</button>
+        <SideQuantityButton />
+        <button id="modify-button" className="disabled-button">
+          MODIFY
+        </button>
+        <button className="disabled-button">TO TENDERS</button>
+        <button className="disabled-button">CREDIT CARD</button>
+        <button className="disabled-button">TO HOME</button>
+        <button className="disabled-button">FUNCTION</button>
       </div>
     </div>
   );

@@ -24,3 +24,20 @@
   box-sizing: border-box;
   width: 100%;
 }
+
+/* global button logic */
+
+button:active {
+  transform: translateY(1px); /* Push down effect */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Smaller shadow */
+}
+
+.disabled-button {
+  cursor: not-allowed !important;
+}
+.disabled-button:active,
+.disabled-button:focus {
+  transform: none !important;
+  box-shadow: none !important;
+  outline: none;
+}

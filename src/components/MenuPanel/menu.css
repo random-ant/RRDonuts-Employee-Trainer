@@ -58,7 +58,6 @@
 
 .menu-item:active {
   transform: translateY(2px); /* Push down effect */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Smaller shadow */
 }
 
 /* PAGE SPECIFIC STUFF */
@@ -118,17 +117,14 @@
 
 .menu-page-select > button:active {
   transform: translateY(2px); /* Push down effect */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Smaller shadow */
 }
 
 #credit-card {
   background-color: #007bff;
   color: white;
-  cursor: not-allowed;
 }
 
 #close-check {
   background-color: #dc3545;
   color: white;
-  cursor: not-allowed;
 }

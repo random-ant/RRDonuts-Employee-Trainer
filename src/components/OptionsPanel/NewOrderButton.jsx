@@ -12,9 +12,11 @@ export default function NewOrderButton() {
         NEW ORDER
       </button>
       <Popup isOpen={isPopupOpen} onClose={() => setPopupOpen(false)}>
-        Are you sure you want to start a new order?
+        Are you sure you want to start a <br />
+        new simulated order?
         <div>
           <button
+            id="yes-option"
             onClick={() => {
               setPopupOpen(false);
               nextSolution();
@@ -22,7 +24,9 @@ export default function NewOrderButton() {
           >
             Yes
           </button>
-          <button onClick={() => setPopupOpen(false)}>No</button>
+          <button id="no-option" onClick={() => setPopupOpen(false)}>
+            No
+          </button>
         </div>
       </Popup>
     </>
