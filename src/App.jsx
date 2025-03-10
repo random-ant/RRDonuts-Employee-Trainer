@@ -3,7 +3,13 @@ import MenuPanel from "./components/MenuPanel/MenuPanel";
 import OrderPanel from "./components/OrderPanel/OrderPanel";
 import OptionsPanel from "./components/OptionsPanel/OptionPanel";
 import Footer from "./components/Footer/Footer";
-import { OrderContext, QuantityContext, SelectedItemsContext } from "./helpers/context";
+import {
+  OrderContext,
+  QuantityContext,
+  SelectedItemsContext,
+  SolutionContext,
+} from "./helpers/context";
+import { getRandSolution } from "./helpers/solutions";
 import "./styles.css";
 
 export default function App() {
@@ -29,12 +35,15 @@ function ContextProvider({ children }) {
   const [userOrder, setUserOrder] = useState([]);
   const [currItemQuantity, setCurrItemQuantity] = useState(1);
   const [selectedItems, setSelectedItems] = useState([]);
+  const [currSolution, setCurrSolution] = useState(getRandSolution());
 
   return (
     <SelectedItemsContext.Provider value={{ selectedItems, setSelectedItems }}>
       <QuantityContext.Provider value={{ currItemQuantity, setCurrItemQuantity }}>
         <OrderContext.Provider value={{ userOrder, setUserOrder }}>
-          {children}
+          <SolutionContext.Provider value={{ currSolution, setCurrSolution }}>
+            {children}
+          </SolutionContext.Provider>
         </OrderContext.Provider>
       </QuantityContext.Provider>
     </SelectedItemsContext.Provider>

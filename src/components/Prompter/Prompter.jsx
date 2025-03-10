@@ -1,14 +1,16 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import Popup from "../Popup/Popup";
+import { SolutionContext } from "../../helpers/context";
 import "./prompter.css";
 
 export default function Prompter() {
   const [isPopupOpen, setPopupOpen] = useState(false);
+  const { currSolution } = useContext(SolutionContext);
 
   return (
     <>
       <div className="prompt-container" onClick={() => setPopupOpen(true)}>
-        click for prompt
+        {currSolution.prompt}
       </div>
 
       <Popup isOpen={isPopupOpen} onClose={() => setPopupOpen(false)}>

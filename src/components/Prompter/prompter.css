@@ -2,7 +2,7 @@
   height: 100px;
   max-height: 20%;
   background-color: rgb(235, 235, 235);
-  border: 2px solid black;
+  border: 2px groove black;
   margin: 1px;
   cursor: pointer;
 }

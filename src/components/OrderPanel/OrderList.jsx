@@ -31,12 +31,12 @@ export default function OrderList() {
 
           <div className="order-modifications">
             <p>{item.memo && item.memo}</p>
-            <p>{item.separate && "SEPARATE"}</p>
-            <p>{item.boxed && "BOXED"}</p>
-            <p>{item.addChocolate && "CHOC"}</p>
-            <p>{item.addPowder && "POWDER"}</p>
-            <p>{item.bag && "BAG"}</p>
-            <p>{item.noAction && "NO ACTION"}</p>
+            <p>{item.hasSeparate && "SEPARATE"}</p>
+            <p>{item.hasBoxed && "BOXED"}</p>
+            <p>{item.hasChocolate && "CHOC"}</p>
+            <p>{item.hasPowder && "POWDER"}</p>
+            <p>{item.hasBag && "BAG"}</p>
+            <p>{item.hasNoAction && "NO ACTION"}</p>
           </div>
         </div>
       ))}

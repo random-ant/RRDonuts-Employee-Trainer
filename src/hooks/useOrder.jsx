@@ -3,19 +3,34 @@ import { OrderContext, QuantityContext } from "../helpers/context";
 import getItem from "../helpers/menuItems";
 
 export class OItem {
-  constructor(name, quantity, price) {
+  constructor(
+    id,
+    name,
+    quantity,
+    price,
+    memo = "",
+    separate = false,
+    boxed = false,
+    addChocolate = false,
+    addPowder = false,
+    noIce = false,
+    easyIce = false,
+    bag = false,
+    noAction = false
+  ) {
+    this.id = id;
     this.name = name;
     this.quantity = quantity;
     this.price = price;
-    this.memo = "";
-    this.separate = false;
-    this.boxed = false;
-    this.addChocolate = false;
-    this.addPowder = false;
-    this.noIce = false;
-    this.easyIce = false;
-    this.bag = false;
-    this.noAction = false;
+    this.memo = memo;
+    this.hasSeparate = separate;
+    this.hasBoxed = boxed;
+    this.hasChocolate = addChocolate;
+    this.hasPowder = addPowder;
+    this.hasNoIce = noIce;
+    this.hasEasyIce = easyIce;
+    this.hasBag = bag;
+    this.hasNoAction = noAction;
   }
 }
 
@@ -26,7 +41,7 @@ export default function useOrder() {
   const addToCart = (itemID, quantityMultiplier = 1) => {
     const item = getItem(itemID);
     const amountToAdd = quantityMultiplier * currItemQuantity;
-    const itemObj = new OItem(item.display_name, amountToAdd, item.price);
+    const itemObj = new OItem(itemID, item.display_name, amountToAdd, item.price);
 
     let orderContainsItem = false;
     for (let i = 0; i < userOrder.length; i++) {
