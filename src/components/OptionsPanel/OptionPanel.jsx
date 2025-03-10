@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { OrderContext, SelectedItemsContext } from "../../helpers/context";
 import useSolution from "../../hooks/useSolution";
+import NameButton from "../NameButton/NameButton";
 import "./options.css";
 
 export default function OptionsPanel() {
@@ -18,7 +19,7 @@ export default function OptionsPanel() {
       <div className="option-container-inner">
         <button id="exit-button">EXIT</button>
         <button id="cancel-button">CANCEL ORDER</button>
-        <button id="name-button">NAME TAB</button>
+        <NameButton />
         <button id="new-order-button" onClick={nextSolution}>
           NEW ORDER
         </button>

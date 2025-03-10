@@ -124,9 +124,11 @@
 #credit-card {
   background-color: #007bff;
   color: white;
+  cursor: not-allowed;
 }
 
 #close-check {
   background-color: #dc3545;
   color: white;
+  cursor: not-allowed;
 }

@@ -8,6 +8,7 @@ import {
   QuantityContext,
   SelectedItemsContext,
   SolutionContext,
+  CustomerNameContext,
 } from "./helpers/context";
 import { getRandSolution } from "./helpers/solutions";
 import "./styles.css";
@@ -36,13 +37,16 @@ function ContextProvider({ children }) {
   const [currItemQuantity, setCurrItemQuantity] = useState(1);
   const [selectedItems, setSelectedItems] = useState([]);
   const [currSolution, setCurrSolution] = useState(getRandSolution());
+  const [customerName, setCustomerName] = useState("");
 
   return (
     <SelectedItemsContext.Provider value={{ selectedItems, setSelectedItems }}>
       <QuantityContext.Provider value={{ currItemQuantity, setCurrItemQuantity }}>
         <OrderContext.Provider value={{ userOrder, setUserOrder }}>
           <SolutionContext.Provider value={{ currSolution, setCurrSolution }}>
-            {children}
+            <CustomerNameContext.Provider value={{ customerName, setCustomerName }}>
+              {children}
+            </CustomerNameContext.Provider>
           </SolutionContext.Provider>
         </OrderContext.Provider>
       </QuantityContext.Provider>
