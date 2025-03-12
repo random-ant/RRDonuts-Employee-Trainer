@@ -15,30 +15,29 @@ export default function useSolution() {
     console.log(currSolution);
     var errorMsg = "";
     var numInOrder = 0;
+
+    // check customer name
+    if (customerName !== currSolution.customer_name) errorMsg = "Customer name is incorrect";
+
     for (const item of userOrder) {
       if (!currSolution.parts.has(item.id)) {
-        // item not in solution
+        // check if wrong item is in solution
         errorMsg = "There's an item that's shouldn't be there";
         break;
       }
 
       numInOrder++;
       const requirements = currSolution.parts.get(item.id);
+      // check item has correct quantity
       if (item.quantity != requirements.amount) "Quantity of item is incorrect";
     }
 
     // check if all item in solution have been covered
-    if (numInOrder !== currSolution.parts.size) errorMsg = "Not all items are present";
-
-    // check customer name
-    if (customerName !== currSolution.customer_name) errorMsg = "Customer name is incorrect";
+    if (numInOrder !== currSolution.parts.size) errorMsg = "There is an item missing";
 
     if (errorMsg === "") {
       // reset everything
       nextSolution();
-    } else {
-      // TODO: notify user of wrong doing
-      console.log(errorMsg);
     }
 
     return errorMsg;
