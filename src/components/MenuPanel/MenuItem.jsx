@@ -1,8 +1,8 @@
 import useOrder from "../../hooks/useOrder";
-import "./menu.css";
 import getItem from "../../helpers/menuItems";
+import "./menu.css";
 
-export default function MenuItem({ itemID, color = "rgb(235, 235, 235)" }) {
+export default function MenuItem({ itemID, color = "rgb(208, 208, 208)" }) {
   const { addToCart } = useOrder();
   const item_name = getItem(itemID).display_name;
 
@@ -12,6 +12,7 @@ export default function MenuItem({ itemID, color = "rgb(235, 235, 235)" }) {
       onClick={() => addToCart(itemID)}
       style={{ backgroundColor: color }}
     >
+      {/* {itemID}: <br /> */}
       {item_name}
     </button>
   );

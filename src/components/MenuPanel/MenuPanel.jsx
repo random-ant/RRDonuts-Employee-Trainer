@@ -1,6 +1,12 @@
-import { useState, useContext } from "react";
-import { QuantityContext } from "../../helpers/context";
-import { DonutPage, CakeDonutsPage, FilledDonutsPage, FrittersTwistsPage } from "./MenuPages";
+import { useState } from "react";
+import QuantitySelectHeader from "./QuantitySelectHeader";
+import {
+  DonutPage,
+  CakeDonutsPage,
+  FilledDonutsPage,
+  FrittersTwistsPage,
+  BakedItemsPage,
+} from "../MenuPages/MenuPages";
 import "./menu.css";
 
 export default function MenuPanel() {
@@ -10,30 +16,21 @@ export default function MenuPanel() {
     switch (currentPage) {
       case 1:
         return <DonutPage />;
-      // case 2:
-      //   return <CakeDonutsPage />;
+      case 2:
+        return <CakeDonutsPage />;
       // case 3:
       //   return <FilledDonutsPage />;
-      // case 4:
-      //   return <FrittersTwistsPage />;
+      case 4:
+        return <FrittersTwistsPage />;
+      case 5:
+        return <BakedItemsPage />;
     }
   };
 
   return (
     <div className="menu-container-outer">
       <div className="menu-container">
-        <div className="quantity-select-container">
-          <QuantityButton count={2} />
-          <QuantityButton count={3} />
-          <QuantityButton count={4} />
-          <QuantityButton count={5} />
-          <QuantityButton count={6} />
-          <QuantityButton count={7} />
-          <QuantityButton count={8} />
-          <QuantityButton count={9} />
-          <button id="memo-button">MEMO</button>
-        </div>
-
+        <QuantitySelectHeader />
         <div className="menu-buttons-container">{renderPage()}</div>
 
         <div className="menu-page-select">
@@ -62,7 +59,7 @@ export default function MenuPanel() {
             KOLACHES
           </button>
           <button onClick={() => setCurrentPage(7)} id="cakes-pies">
-            CAKES PIES
+            CAKES / PIES / DELIVERIES
           </button>
           <button onClick={() => setCurrentPage(8)} id="cookies">
             COOKIES BREAD
@@ -76,24 +73,5 @@ export default function MenuPanel() {
         </div>
       </div>
     </div>
-  );
-}
-
-function QuantityButton({ count }) {
-  const { currItemQuantity, setCurrItemQuantity } = useContext(QuantityContext);
-
-  return (
-    <button
-      className={`quantity-button ${currItemQuantity == count ? "active-quantity" : ""}`}
-      onClick={() => {
-        if (currItemQuantity == count) {
-          setCurrItemQuantity(1);
-        } else {
-          setCurrItemQuantity(+count);
-        }
-      }}
-    >
-      {count}
-    </button>
   );
 }
