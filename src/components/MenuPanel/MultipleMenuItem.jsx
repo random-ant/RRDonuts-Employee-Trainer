@@ -5,7 +5,7 @@ export default function MultipleMenuItem({
   itemID,
   display,
   multiplier = 12,
-  color = "rgb(235, 235, 235)",
+  color = "rgb(208, 208, 208)",
 }) {
   const { addToCart } = useOrder();
 

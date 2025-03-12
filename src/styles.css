@@ -28,8 +28,8 @@
 /* global button logic */
 
 button:active {
-  transform: translateY(1px); /* Push down effect */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Smaller shadow */
+  transform: scale(0.99);
+  /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); Smaller shadow */
 }
 
 .disabled-button {

@@ -56,10 +56,6 @@
   cursor: pointer;
 }
 
-.menu-item:active {
-  transform: translateY(2px); /* Push down effect */
-}
-
 /* PAGE SPECIFIC STUFF */
 
 .menu-buttons-container {
@@ -72,22 +68,6 @@
 
 .menu-buttons-container > * {
   height: 100%;
-}
-
-.donut-container {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-auto-rows: 1fr;
-  gap: 10px;
-}
-
-.fritters-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 50px;
-  padding-left: 100px;
-  padding-right: 100px;
-  padding-bottom: 100px;
 }
 
 /* MENU PAGE SELECTION */
