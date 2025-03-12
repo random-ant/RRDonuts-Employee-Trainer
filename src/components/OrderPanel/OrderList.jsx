@@ -26,7 +26,7 @@ export default function OrderList() {
           <div className="text-order-container">
             <p className="order-quantity-text">{item.quantity}</p>
             <p className="order-item-text">{item.name}</p>
-            <p className="order-price-text">${item.price}</p>
+            <p className="order-price-text">${(item.price * item.quantity).toFixed(2)}</p>
           </div>
 
           <div className="order-modifications">

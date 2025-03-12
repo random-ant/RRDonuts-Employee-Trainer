@@ -15,6 +15,8 @@ export default function OrderPanel() {
       <Prompter />
       <OrderList />
 
+      {/* TODO: add money summary */}
+
       <button
         className="checkout-button"
         onClick={() => {
