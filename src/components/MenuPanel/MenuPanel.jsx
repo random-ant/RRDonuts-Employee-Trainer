@@ -6,7 +6,14 @@ import {
   FilledDonutsPage,
   FrittersTwistsPage,
   BakedItemsPage,
-} from "../MenuPages/MenuPages";
+} from "../MenuPages/TopRowPages";
+import {
+  KolachesPage,
+  CakesPiesPage,
+  CookieBreadPage,
+  MerchPage,
+  DrinksPage,
+} from "../MenuPages/BottomRowPages";
 import "./menu.css";
 
 export default function MenuPanel() {
@@ -18,12 +25,22 @@ export default function MenuPanel() {
         return <DonutPage />;
       case 2:
         return <CakeDonutsPage />;
-      // case 3:
-      //   return <FilledDonutsPage />;
+      case 3:
+        return <FilledDonutsPage />;
       case 4:
         return <FrittersTwistsPage />;
       case 5:
         return <BakedItemsPage />;
+      case 6:
+        return <KolachesPage />;
+      case 7:
+        return <CakesPiesPage />;
+      case 8:
+        return <CookieBreadPage />;
+      case 9:
+        return <MerchPage />;
+      case 10:
+        return <DrinksPage />;
     }
   };
 

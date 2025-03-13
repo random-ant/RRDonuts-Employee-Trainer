@@ -29,7 +29,7 @@ export default function useSolution() {
       numInOrder++;
       const requirements = currSolution.parts.get(item.id);
       // check item has correct quantity
-      if (item.quantity != requirements.amount) "Quantity of item is incorrect";
+      if (item.quantity != requirements.amount) errorMsg = "Quantity of item is incorrect";
     }
 
     // check if all item in solution have been covered

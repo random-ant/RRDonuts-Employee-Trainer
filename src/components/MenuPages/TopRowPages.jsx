@@ -74,40 +74,28 @@ export function BakedItemsPage() {
     <div className="default-container">
       <MenuItem itemID={501} />
       <MenuItem itemID={502} />
-      <MenuItem itemID={503} color="" />
-      <MenuItem itemID={504} color="" />
+      <MenuItem itemID={503} color="rgb(76, 171, 254)" />
+      <MenuItem itemID={504} color="rgb(254, 212, 0)" />
       <MenuItem itemID={505} />
-      <MenuItem itemID={506} color="" />
-      <MenuItem itemID={507} color="" />
-      <MenuItem itemID={508} color="" />
+      <MenuItem itemID={506} color="rgb(251, 35, 35)" />
+      <MenuItem itemID={507} color="rgb(21, 103, 255)" />
+      <MenuItem itemID={508} color="rgb(255, 124, 124)" />
       <MultipleMenuItem itemID={505} display="DOZ CREAM CHZ KOLACHE" />
-      <MultipleMenuItem itemID={506} display="DOZ STRAWBERRY KOLACHE" />
-      <MultipleMenuItem itemID={507} display="DOZ BLUEBERRY KOLACHE" />
-      <MultipleMenuItem itemID={508} display="DOZ CHERRY KOLACHE" />
-      <div className="spacer"></div>
-      <MenuItem itemID={509} color="" />
-      <MenuItem itemID={510} color="" />
-      <div className="spacer"></div>
+      <MultipleMenuItem
+        itemID={506}
+        display="DOZ STRAWBERRY KOLACHE"
+        color="rgb(251, 35, 35)"
+      />
+      <MultipleMenuItem
+        itemID={507}
+        display="DOZ BLUEBERRY KOLACHE"
+        color="rgb(21, 103, 255)"
+      />
+      <MultipleMenuItem itemID={508} display="DOZ CHERRY KOLACHE" color="rgb(255, 124, 124)" />
+      <div className="spacer" />
+      <MenuItem itemID={509} color="rgb(225, 174, 255)" />
+      <MenuItem itemID={510} color="rgb(247,105,26)" />
+      <div className="spacer" />
     </div>
   );
 }
-
-export function KolachesPage() {}
-
-export function CakesPiesPage() {}
-
-export function CakesPage() {
-  return <div className="default-container">
-    
-  </div>;
-}
-
-export function CookieBreadPage() {}
-
-export function MerchPage() {}
-
-export function DrinksPage() {}
-
-export function HotCoffeePage() {}
-
-export function ColdCoffeePage() {}
