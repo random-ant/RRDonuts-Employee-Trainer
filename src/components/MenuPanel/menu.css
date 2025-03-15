@@ -11,8 +11,8 @@
 
 .menu-container {
   display: grid;
-  grid-template-rows: 70px 1fr 200px;
-  gap: 10px;
+  grid-template-rows: 10% 1fr 25%;
+  gap: 1vh;
   padding: 10px;
   height: 100%;
   background-color: #333;
@@ -21,10 +21,10 @@
 /* QUANTITY HEADER */
 
 .quantity-select-container {
-  /* height: 100px; */
+  height: 100%;
   display: grid;
   grid-template-columns: repeat(9, 1fr); /* 9 equal columns */
-  gap: 12px;
+  gap: 10px;
 }
 
 .quantity-button {
@@ -48,10 +48,10 @@
 /* MENU STUFF */
 
 .menu-item {
-  padding: 15px;
-  font-size: 20px;
+  padding: 5%;
+  font-size: 1vw;
   border: 1px solid #ccc;
-  border-radius: 16px;
+  border-radius: 1vw;
   text-align: center;
   cursor: pointer;
 }
@@ -87,7 +87,8 @@
   text-align: center;
   color: black;
   font-weight: bold;
-  font-size: 16px;
+  /* font-size: 16px; */
+  font-size: 0.9vw;
   padding: 10px;
   border-radius: 5px;
   background-size: cover;

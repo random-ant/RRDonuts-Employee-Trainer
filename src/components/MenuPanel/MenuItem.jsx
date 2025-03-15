@@ -40,7 +40,7 @@ export default function MenuItem({
       onClick={() => addToCart(itemID, multiplier)}
       style={{ backgroundColor: color, color: () => calculateTextColor(color) }}
     >
-      {itemID}: <br />
+      {/* {itemID}: <br /> */}
       {item_name}
     </button>
   );
