@@ -1,5 +1,4 @@
 import MenuItem from "../MenuPanel/MenuItem";
-import MultipleMenuItem from "../MenuPanel/MultipleMenuItem";
 import "./menuPages.css";
 
 export function KolachesPage() {}
