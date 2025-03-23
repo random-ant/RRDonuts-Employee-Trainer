@@ -1,5 +1,6 @@
 import MenuItem from "../MenuPanel/MenuItem";
 import "./menuPages.css";
+import "../MenuPanel/menu.css";
 
 export function DonutPage() {
   return (
@@ -55,7 +56,30 @@ export function CakeDonutsPage() {
   );
 }
 
-export function FilledDonutsPage() {}
+export function FilledDonutsPage() {
+  return (
+    <div className="default-container">
+      <MenuItem itemID={301} color="rgb(132,82,60)" />
+      <MenuItem itemID={302} />
+      <MenuItem itemID={303} color="rgb(249, 231, 187)" />
+      <MenuItem itemID={304} color="rgb(197, 158, 255)" />
+
+      <MenuItem isDozen itemID={301} display="DOZ ECLAIR" color="rgb(132,82,60)" />
+      <MenuItem isDozen itemID={302} display="DOZ CREAM BISMARK" />
+      <MenuItem isDozen itemID={303} display="DOZ BAVARIAN CREAM" color="rgb(249, 231, 187)" />
+      <button className="disabled-button menu-item" id="filled-add-choc">
+        Add Choc
+      </button>
+      <MenuItem itemID={305} color="rgb(247, 229, 31)" />
+      <MenuItem itemID={306} color="rgb(189, 0, 0)" />
+      <MenuItem itemID={307} color="rgb(248, 100, 100)" />
+      <div className="spacer" />
+      <MenuItem isDozen itemID={305} display="DOZ LEMON" color="rgb(247, 229, 31)" />
+      <MenuItem isDozen itemID={306} display="DOZ STRAWBERRY FILLED" color="rgb(189, 0, 0)" />
+      <MenuItem isDozen itemID={307} display="DOZ CHERRY" color="rgb(248, 100, 100)" />
+    </div>
+  );
+}
 
 export function FrittersTwistsPage() {
   return (

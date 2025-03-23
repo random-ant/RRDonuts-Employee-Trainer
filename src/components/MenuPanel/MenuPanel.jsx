@@ -79,7 +79,7 @@ export default function MenuPanel() {
             CAKES / PIES / DELIVERIES
           </button>
           <button onClick={() => setCurrentPage(8)} id="cookies">
-            COOKIES BREAD
+            COOKIES / BREAD
           </button>
           <button onClick={() => setCurrentPage(9)} id="merch">
             MERCH

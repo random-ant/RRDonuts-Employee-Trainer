@@ -25,7 +25,8 @@ export default function MenuItem({
   itemID,
   display = "",
   isDozen = false,
-  color = "rgb(208,208,208)",
+  color = "rgb(232, 230, 230)",
+  className = "",
 }) {
   const { addToCart } = useOrder();
   let item_name = getItem(itemID).display_name;
@@ -36,7 +37,7 @@ export default function MenuItem({
 
   return (
     <button
-      className="menu-item"
+      className={"menu-item " + className}
       onClick={() => addToCart(itemID, multiplier)}
       style={{
         backgroundColor: color,

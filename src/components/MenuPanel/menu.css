@@ -11,7 +11,7 @@
 
 .menu-container {
   display: grid;
-  grid-template-rows: min(6%, 200px) 1fr 25%;
+  grid-template-rows: 8% 1fr 25%;
   gap: 2px;
   padding: 10px;
   height: 100%;
@@ -51,6 +51,7 @@
 
 .menu-item {
   padding: 5%;
+  height: 100%;
   font-size: 1vw;
   border: 1px solid #ccc;
   border-radius: 1vw;
@@ -62,8 +63,8 @@
 
 .menu-buttons-container {
   display: "flex";
-  margin-top: 20px;
-  margin-bottom: 20px;
+  margin-top: 1.5vh;
+  margin-bottom: 1.5vh;
   justify-content: "center";
   align-items: "center";
 }
@@ -120,4 +121,8 @@
 #close-check {
   background-color: #dc3545;
   color: black;
+}
+
+#merch {
+  color: rgb(179, 17, 17);
 }

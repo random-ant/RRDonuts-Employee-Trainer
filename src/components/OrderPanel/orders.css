@@ -58,3 +58,7 @@
   font-weight: bold;
   cursor: pointer;
 }
+
+.checkout-button:active {
+  transform: translateY(2px);
+}
