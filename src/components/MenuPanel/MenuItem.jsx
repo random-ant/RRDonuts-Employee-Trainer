@@ -18,14 +18,14 @@ function calculateTextColor(bgColor) {
   const { red, green, blue } = deconstructRGB(bgColor);
   const brightness = (red * 299 + green * 587 + blue * 114) / 1000;
   console.log(brightness);
-  return brightness > 230 ? "black" : "white";
+  return brightness > 150 ? "black" : "white";
 }
 
 export default function MenuItem({
   itemID,
   display = "",
   isDozen = false,
-  color = "rgb(208, 208, 208)",
+  color = "rgb(208,208,208)",
 }) {
   const { addToCart } = useOrder();
   let item_name = getItem(itemID).display_name;
@@ -38,7 +38,10 @@ export default function MenuItem({
     <button
       className="menu-item"
       onClick={() => addToCart(itemID, multiplier)}
-      style={{ backgroundColor: color, color: () => calculateTextColor(color) }}
+      style={{
+        backgroundColor: color,
+        color: calculateTextColor(color),
+      }}
     >
       {/* {itemID}: <br /> */}
       {item_name}

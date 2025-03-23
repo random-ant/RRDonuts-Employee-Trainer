@@ -36,10 +36,18 @@ export default function OptionsPanel() {
         <button id="modify-button" className="disabled-button">
           MODIFY
         </button>
-        <button className="disabled-button">TO TENDERS</button>
-        <button className="disabled-button">CREDIT CARD</button>
-        <button className="disabled-button">TO HOME</button>
-        <button className="disabled-button">FUNCTION</button>
+        <button id="tenders-button" className="disabled-button">
+          TO TENDERS
+        </button>
+        <button id="credit-card-button" className="disabled-button">
+          CREDIT CARD
+        </button>
+        <button id="to-home-button" className="disabled-button">
+          TO HOME
+        </button>
+        <button id="function-button" className="disabled-button">
+          FUNCTION
+        </button>
       </div>
     </div>
   );

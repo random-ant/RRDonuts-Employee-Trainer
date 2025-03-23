@@ -1,6 +1,8 @@
 .footer-container {
+  display: flex;
   background-color: black;
   color: white;
-  padding: 2px;
-  font-size: 14px;
+  font-size: 1.5vh;
+  padding-left: 0.2vw;
+  align-items: center;
 }

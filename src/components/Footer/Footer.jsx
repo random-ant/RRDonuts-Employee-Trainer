@@ -1,5 +1,9 @@
 import "./footer.css";
 
 export default function Footer() {
-  return <div className="footer-container">made by Nathan Lu</div>;
+  return (
+    <div className="footer-container">
+      <p>created by Nathan Lu</p>
+    </div>
+  );
 }
