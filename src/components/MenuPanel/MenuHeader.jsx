@@ -2,7 +2,11 @@ import { useContext } from "react";
 import { QuantityContext } from "../../helpers/context";
 import "./menu.css";
 
-export default function QuantitySelectHeader() {
+export default function MenuHeader() {
+  return <QuantitySelectHeader />;
+}
+
+function QuantitySelectHeader() {
   return (
     <div className="quantity-select-container">
       <QuantityButton count={2} />

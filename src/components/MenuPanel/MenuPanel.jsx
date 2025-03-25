@@ -1,5 +1,5 @@
-import { useState } from "react";
-import QuantitySelectHeader from "./QuantitySelectHeader";
+import { useContext } from "react";
+import MenuHeader from "./MenuHeader";
 import {
   DonutPage,
   CakeDonutsPage,
@@ -13,14 +13,17 @@ import {
   CookieBreadPage,
   MerchPage,
   DrinksPage,
+  HotCoffeePage,
+  ColdCoffeePage,
 } from "../MenuPages/BottomRowPages";
 import "./menu.css";
+import { CurrMenuPageContext } from "../../helpers/context";
 
 export default function MenuPanel() {
-  const [currentPage, setCurrentPage] = useState(1);
+  const { currMenuPage, setCurrMenuPage } = useContext(CurrMenuPageContext);
 
   const renderPage = () => {
-    switch (currentPage) {
+    switch (currMenuPage) {
       case 1:
         return <DonutPage />;
       case 2:
@@ -41,50 +44,54 @@ export default function MenuPanel() {
         return <MerchPage />;
       case 10:
         return <DrinksPage />;
+      case 11:
+        return <HotCoffeePage />;
+      case 12:
+        return <ColdCoffeePage />;
     }
   };
 
   return (
     <div className="menu-container-outer">
       <div className="menu-container">
-        <QuantitySelectHeader />
+        <MenuHeader />
         <div className="menu-buttons-container">{renderPage()}</div>
 
         <div className="menu-page-select">
           <button id="credit-card" className="disabled-button">
             CREDIT CARD
           </button>
-          <button onClick={() => setCurrentPage(1)} id="donuts">
+          <button onClick={() => setCurrMenuPage(1)} id="donuts">
             DONUTS
           </button>
-          <button onClick={() => setCurrentPage(2)} id="cake-donuts">
+          <button onClick={() => setCurrMenuPage(2)} id="cake-donuts">
             CAKE DONUTS
           </button>
-          <button onClick={() => setCurrentPage(3)} id="filled">
+          <button onClick={() => setCurrMenuPage(3)} id="filled">
             FILLED DONUTS
           </button>
-          <button onClick={() => setCurrentPage(4)} id="fritters">
+          <button onClick={() => setCurrMenuPage(4)} id="fritters">
             FRITTERS & TWISTS
           </button>
-          <button onClick={() => setCurrentPage(5)} id="baked">
+          <button onClick={() => setCurrMenuPage(5)} id="baked">
             BAKED ITEMS
           </button>
           <button id="close-check" className="disabled-button">
             CLOSE CHECK
           </button>
-          <button onClick={() => setCurrentPage(6)} id="kolaches">
+          <button onClick={() => setCurrMenuPage(6)} id="kolaches">
             KOLACHES
           </button>
-          <button onClick={() => setCurrentPage(7)} id="cakes-pies">
+          <button onClick={() => setCurrMenuPage(7)} id="cakes-pies">
             CAKES / PIES / DELIVERIES
           </button>
-          <button onClick={() => setCurrentPage(8)} id="cookies">
+          <button onClick={() => setCurrMenuPage(8)} id="cookies">
             COOKIES / BREAD
           </button>
-          <button onClick={() => setCurrentPage(9)} id="merch">
+          <button onClick={() => setCurrMenuPage(9)} id="merch">
             MERCH
           </button>
-          <button onClick={() => setCurrentPage(10)} id="drinks">
+          <button onClick={() => setCurrMenuPage(10)} id="drinks">
             DRINKS
           </button>
         </div>

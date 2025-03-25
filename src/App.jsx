@@ -9,6 +9,7 @@ import {
   SelectedItemsContext,
   SolutionContext,
   CustomerNameContext,
+  CurrMenuPageContext,
 } from "./helpers/context";
 import { getRandSolution } from "./helpers/solutions";
 import "./styles.css";
@@ -38,6 +39,7 @@ function ContextProvider({ children }) {
   const [selectedItems, setSelectedItems] = useState([]);
   const [currSolution, setCurrSolution] = useState(getRandSolution());
   const [customerName, setCustomerName] = useState("");
+  const [currMenuPage, setCurrMenuPage] = useState(1);
 
   return (
     <SelectedItemsContext.Provider value={{ selectedItems, setSelectedItems }}>
@@ -45,7 +47,9 @@ function ContextProvider({ children }) {
         <OrderContext.Provider value={{ userOrder, setUserOrder }}>
           <SolutionContext.Provider value={{ currSolution, setCurrSolution }}>
             <CustomerNameContext.Provider value={{ customerName, setCustomerName }}>
-              {children}
+              <CurrMenuPageContext.Provider value={{ currMenuPage, setCurrMenuPage }}>
+                {children}
+              </CurrMenuPageContext.Provider>
             </CustomerNameContext.Provider>
           </SolutionContext.Provider>
         </OrderContext.Provider>

@@ -1,5 +1,7 @@
+import { useContext } from "react";
 import MenuItem from "../MenuPanel/MenuItem";
 import ImageMenuItem from "../MenuPanel/ImageMenuItem";
+import { CurrMenuPageContext } from "../../helpers/context";
 import "./menuPages.css";
 
 export function KolachesPage() {
@@ -97,14 +99,28 @@ export function MerchPage() {
 }
 
 export function DrinksPage() {
+  const { setCurrMenuPage } = useContext(CurrMenuPageContext);
+
   return (
     <div className="drinks-container">
       <div className="drinks-section">
         <MenuItem itemID={1001} color="rgb(132,82,60)" />
         <MenuItem itemID={1002} color="rgb(232, 85, 6)" />
         <div className="spacer" />
-        <button>HOT FLAVORED COFFEES</button>
-        <button>ICED COFFEES</button>
+        <button
+          className="menu-item"
+          onClick={() => setCurrMenuPage(11)}
+          style={{ backgroundColor: "rgb(161, 216, 255)" }}
+        >
+          HOT FLAVORED COFFEES
+        </button>
+        <button
+          className="menu-item"
+          onClick={() => setCurrMenuPage(12)}
+          style={{ backgroundColor: "rgb(161, 216, 255)" }}
+        >
+          ICED COFFEES
+        </button>
       </div>
       <div className="drinks-section">
         <ImageMenuItem itemID={1003} src="Aquafina.svg" />
@@ -140,6 +156,35 @@ export function DrinksPage() {
   );
 }
 
-export function HotCoffeePage() {}
+export function HotCoffeePage() {
+  return (
+    <div className="default-container">
+      <MenuItem itemID={1101} />
+      <MenuItem itemID={1102} />
+      <MenuItem itemID={1103} />
+      <div className="spacer" />
+      <MenuItem itemID={1104} />
+      <MenuItem itemID={1105} />
+      <MenuItem itemID={1106} color="rgb(247,105,26)" />
+      <MenuItem itemID={1107} color="rgb(251, 35, 35)" />
+    </div>
+  );
+}
 
-export function ColdCoffeePage() {}
+export function ColdCoffeePage() {
+  return (
+    <div className="default-container">
+      <MenuItem itemID={1151} />
+      <MenuItem itemID={1152} />
+      <div className="spacer" />
+      <MenuItem itemID={1153} color="rgb(251, 35, 35)" />
+      <MenuItem itemID={1154} />
+      <MenuItem itemID={1155} />
+      <MenuItem itemID={1156} />
+      <div className="spacer" />
+      <MenuItem itemID={1157} />
+      <MenuItem itemID={1158} />
+      <MenuItem itemID={1159} />
+    </div>
+  );
+}
