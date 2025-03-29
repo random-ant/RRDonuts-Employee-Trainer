@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { CustomerNameContext } from "../../helpers/context";
 import OrderList from "./OrderList";
 import Prompter from "../Prompter/Prompter";
 import Popup from "../Popup/Popup";
@@ -9,10 +10,11 @@ export default function OrderPanel() {
   const [isPopupOpen, setPopupOpen] = useState(false);
   const [errorMsg, setErrorMsg] = useState("");
   const { checkOrder } = useSolution();
-
+  const { customerName } = useContext(CustomerNameContext);
   return (
     <div className="order-container">
       <Prompter />
+      <div className="name-display">{customerName}</div>
       <OrderList />
 
       {/* TODO: add money summary */}

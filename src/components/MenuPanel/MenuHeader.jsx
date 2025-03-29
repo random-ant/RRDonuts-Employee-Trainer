@@ -1,9 +1,27 @@
 import { useContext } from "react";
-import { QuantityContext } from "../../helpers/context";
+import { QuantityContext, CurrMenuPageContext } from "../../helpers/context";
 import "./menu.css";
 
 export default function MenuHeader() {
-  return <QuantitySelectHeader />;
+  const { currMenuPage } = useContext(CurrMenuPageContext);
+
+  if (currMenuPage >= 10) {
+    return (
+      <div className="drink-menu-header">
+        <button className="menu-item">REGULAR</button>
+        <button
+          className="menu-item"
+          style={{
+            visibility: currMenuPage == 10 ? "hidden" : "visible",
+            backgroundColor: "blue",
+          }}
+        >
+          MEMO
+        </button>
+        <button className="menu-item">LARGE</button>
+      </div>
+    );
+  } else return <QuantitySelectHeader />;
 }
 
 function QuantitySelectHeader() {

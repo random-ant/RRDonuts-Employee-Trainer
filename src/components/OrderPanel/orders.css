@@ -1,8 +1,18 @@
 .order-container {
   display: grid;
-  grid-template-rows: 15% 1fr 12%;
+  grid-template-rows: 10% 8% 1fr 12%;
   background-color: rgb(206, 206, 206);
   border: 1px solid #1c1c1c;
+}
+
+.name-display {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.8vw;
+  font-weight: bold;
+  color: black;
+  text-decoration: underline;
 }
 
 .order-list-container {
