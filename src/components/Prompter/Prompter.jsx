@@ -10,11 +10,13 @@ export default function Prompter() {
   return (
     <>
       <div className="prompt-container" onClick={() => setPopupOpen(true)}>
-        {currSolution.prompt}
+        <span className="custName">{currSolution.customer_name}</span>: {currSolution.prompt}
       </div>
 
       <Popup isOpen={isPopupOpen} onClose={() => setPopupOpen(false)}>
-        <p>This is a reusable popup component.</p>
+        <h2>Customer Order</h2>
+        <br />
+        <span className="custName">{currSolution.customer_name}</span>: {currSolution.prompt}
       </Popup>
     </>
   );

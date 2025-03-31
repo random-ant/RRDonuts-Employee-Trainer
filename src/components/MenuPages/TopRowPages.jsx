@@ -22,7 +22,14 @@ export function DonutPage() {
       <MenuItem isDozen itemID={107} display="DOZ STRAW SPRINKLED" color="rgb(237,186,211)" />
       <MenuItem isDozen itemID={108} display="DOZ HOLES" color="rgb(214,97,52)" />
       <MenuItem itemID={110} color="rgb(132,82,60)" />
-      <MenuItem isDozen itemID={111} display="CUSTOM: TODO" color="rgb(227,120,64)" />
+      <button
+        className="menu-item disabled-button"
+        style={{ backgroundColor: "rgb(239, 116, 45)" }}
+        id="dozen-glazed"
+      >
+        1 DZ <br /> 6 GLAZED/6 CHOC
+      </button>
+      {/* <MenuItem isDozen itemID={111} display="CUSTOM: TODO" color="rgb(227,120,64)" /> */}
       <MenuItem itemID={111} color="rgb(0,158,238)" />
       <MenuItem itemID={112} />
     </div>

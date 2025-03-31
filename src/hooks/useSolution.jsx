@@ -49,7 +49,7 @@ export default function useSolution() {
   const nextSolution = () => {
     setCurrSolution(getRandSolution());
     setUserOrder([]);
-    setCustomerName("");
+    setCustomerName("NEW ORDER");
   };
 
   return { checkOrder, nextSolution };

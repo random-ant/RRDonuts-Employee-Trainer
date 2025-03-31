@@ -14,7 +14,7 @@ export default function OrderPanel() {
   return (
     <div className="order-container">
       <Prompter />
-      <div className="name-display">{customerName}</div>
+      <p id="name-display">{customerName}</p>
       <OrderList />
 
       {/* TODO: add money summary */}

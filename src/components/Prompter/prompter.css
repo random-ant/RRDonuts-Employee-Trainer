@@ -1,6 +1,18 @@
 .prompt-container {
   background-color: rgb(235, 235, 235);
-  border: 2px groove black;
-  margin: 1px;
+  padding: 1vmin;
+  font-size: 2vh;
+  border-bottom: 2px solid black;
   cursor: pointer;
+  overflow: scroll;
+  box-sizing: border-box;
+}
+.prompt-container::-webkit-scrollbar {
+  display: none; /* remove scroll bar */
+}
+
+.custName {
+  font-weight: bold;
+  text-decoration: underline;
+  color: rgb(0, 0, 0);
 }

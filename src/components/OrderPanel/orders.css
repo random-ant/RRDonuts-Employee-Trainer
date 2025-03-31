@@ -1,18 +1,18 @@
 .order-container {
   display: grid;
-  grid-template-rows: 10% 8% 1fr 12%;
+  grid-template-rows: 12% 5% 1fr 12%;
   background-color: rgb(206, 206, 206);
   border: 1px solid #1c1c1c;
 }
 
-.name-display {
+#name-display {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 1.8vw;
-  font-weight: bold;
+  font-family: Sans-serif;
+  font-size: 2vh;
   color: black;
-  text-decoration: underline;
+  border-bottom: 2px solid rgb(235, 235, 235);
 }
 
 .order-list-container {

@@ -7,7 +7,8 @@ export default function NameButton() {
   const { customerName, setCustomerName } = useContext(CustomerNameContext);
 
   const handleInputChange = (event) => {
-    setCustomerName(event.target.value);
+    let input = event.target.value;
+    setCustomerName(input.toUpperCase());
   };
 
   return (

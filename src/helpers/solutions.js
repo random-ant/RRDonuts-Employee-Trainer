@@ -1,9 +1,9 @@
 const SOLUTION_LITERALS = [
   // customer_name, prompt, [[item_id, quantity, [modifiers]], note/comment
-  ["john", "Can I have 6 glazed donuts?", [[101, 6]]],
+  ["John", "Can I have 6 glazed donuts?", [[101, 6]]],
 
   [
-    "emily",
+    "Emily",
     "Can I have 6 glazed donuts and 6 chocolate donuts?",
     [
       [101, 6],
@@ -12,7 +12,7 @@ const SOLUTION_LITERALS = [
   ],
 
   [
-    "michael",
+    "Michael",
     "Can I have 4 glazed donuts, 4 chocolate donuts, and 4 strawberry iced donuts?",
     [
       [101, 4],
@@ -22,7 +22,7 @@ const SOLUTION_LITERALS = [
   ],
 
   [
-    "sarah",
+    "Sarah",
     "Can I have 3 glazed donuts, 2 blueberry cake donuts, 2 plain cake donuts, 2 chocolate cake donuts, and 2 spice cake donuts?",
     [
       [101, 3],
@@ -35,7 +35,7 @@ const SOLUTION_LITERALS = [
   ],
 
   [
-    "david",
+    "David",
     "Can I have 3 glazed donuts, 1dz donut holes, 2 white milks, and a regular iced latte?",
     [
       [101, 3],
@@ -46,7 +46,7 @@ const SOLUTION_LITERALS = [
   ],
 
   [
-    "jessica",
+    "Jessica",
     "Can I have a Texas-sized half-and-half donut, 2dz donut holes, 1 chocolate milk, and 1 regular sausage and cheese kolache?",
     [
       [110, 1],
@@ -58,7 +58,7 @@ const SOLUTION_LITERALS = [
   ],
 
   [
-    "anthony",
+    "Anthony",
     "Can I have 1 bavarian cream donut, 1 eclair, 1 cream bismark, 1 baked cinnamon roll, and 1 bottled water?",
     [
       [303, 1],
@@ -70,7 +70,7 @@ const SOLUTION_LITERALS = [
   ],
 
   [
-    "laura",
+    "Laura",
     "Can I have 3 glazed donuts, 3 maple donuts, 3 strawberry sprinkled donuts, 2 chocolate sprinkled donuts, 1 bavarian cream donut, 1dz donut holes, and 1 large Dr. Pepper?",
     [
       [101, 3],
@@ -85,7 +85,7 @@ const SOLUTION_LITERALS = [
   ],
 
   [
-    "daniel",
+    "Daniel",
     "Can I have 1 large jalapeno cheese kolache, 1 regular cheese kolache, 1 tx-sized cinnamon roll, and 1 regular coffee?",
     [
       [604, 1],
@@ -97,14 +97,14 @@ const SOLUTION_LITERALS = [
   ],
 
   [
-    "sophia",
+    "Sophia",
     "Can I have 1dz glazed donuts in two separate boxes?",
     [[101, 12, ["MEMO: 2bx of 6 glazed donuts"]]],
     "Need to type in the memo box '2bx of 6 glazed donuts'",
   ],
 
   [
-    "matthew",
+    "Matthew",
     "Can I have 3 strawberry fruit kolaches, 2 glazed donuts, 2 blueberry fruit kolaches, 3 cream cheese kolaches, 2 maple donuts, and 3 regular cokes?",
     [
       [506, 3],
@@ -118,7 +118,7 @@ const SOLUTION_LITERALS = [
   ],
 
   [
-    "keisha",
+    "Keisha",
     "Can I have 2 glazed, 1dz donut holes, and 1 reg Dr. Pepper?",
     [
       [101, 2],

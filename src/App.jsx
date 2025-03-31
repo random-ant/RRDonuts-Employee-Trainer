@@ -38,7 +38,7 @@ function ContextProvider({ children }) {
   const [currItemQuantity, setCurrItemQuantity] = useState(1);
   const [selectedItems, setSelectedItems] = useState([]);
   const [currSolution, setCurrSolution] = useState(getRandSolution());
-  const [customerName, setCustomerName] = useState("");
+  const [customerName, setCustomerName] = useState("NEW ORDER");
   const [currMenuPage, setCurrMenuPage] = useState(1);
 
   return (
