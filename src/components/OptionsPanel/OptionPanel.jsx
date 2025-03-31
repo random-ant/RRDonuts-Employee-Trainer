@@ -3,16 +3,13 @@ import { OrderContext, SelectedItemsContext } from "../../helpers/context";
 import NameButton from "./NameButton";
 import NewOrderButton from "./NewOrderButton";
 import SideQuantityButton from "./SideQuantityButton";
+import CancelOrderButton from "./CancelOrderButton";
 import "./options.css";
 
 export default function OptionsPanel() {
   const { userOrder, setUserOrder } = useContext(OrderContext);
   const { selectedItems, setSelectedItems } = useContext(SelectedItemsContext);
 
-  const clickCancelOrder = () => {
-    setUserOrder([]);
-    setSelectedItems([]);
-  };
   const clickDelete = () => {
     setUserOrder(userOrder.filter((item, index) => !selectedItems.includes(index)));
     setSelectedItems([]);
@@ -24,9 +21,7 @@ export default function OptionsPanel() {
         <button id="exit-button" className="disabled-button">
           EXIT
         </button>
-        <button id="cancel-button" onClick={clickCancelOrder}>
-          CANCEL ORDER
-        </button>
+        <CancelOrderButton />
         <NameButton />
         <NewOrderButton />
         <button id="delete-button" onClick={clickDelete}>

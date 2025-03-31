@@ -11,10 +11,11 @@ export default function OrderPanel() {
   const [errorMsg, setErrorMsg] = useState("");
   const { checkOrder } = useSolution();
   const { customerName } = useContext(CustomerNameContext);
+
   return (
     <div className="order-container">
       <Prompter />
-      <p id="name-display">{customerName}</p>
+      <p id="name-display">{customerName ? customerName : "NEW ORDER"}</p>
       <OrderList />
 
       {/* TODO: add money summary */}

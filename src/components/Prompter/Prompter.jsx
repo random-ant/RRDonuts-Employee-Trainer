@@ -14,7 +14,7 @@ export default function Prompter() {
       </div>
 
       <Popup isOpen={isPopupOpen} onClose={() => setPopupOpen(false)}>
-        <h2>Customer Order</h2>
+        <h3>Customer Order</h3>
         <br />
         <span className="custName">{currSolution.customer_name}</span>: {currSolution.prompt}
       </Popup>

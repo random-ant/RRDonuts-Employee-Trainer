@@ -45,8 +45,8 @@
   color: white;
 }
 
-#yes-option,
-#no-option {
+.yes-option,
+.no-option {
   width: 160px;
   max-width: 40%;
   height: 40px;
@@ -55,12 +55,12 @@
   font-weight: bold;
 }
 
-#yes-option {
+.yes-option {
   background-color: green;
   color: white;
 }
 
-#no-option {
+.no-option {
   background-color: rgb(220, 0, 0);
   color: black;
 }

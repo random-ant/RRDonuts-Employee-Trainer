@@ -16,7 +16,7 @@ export default function NewOrderButton() {
         new simulated order?
         <div>
           <button
-            id="yes-option"
+            className="yes-option"
             onClick={() => {
               setPopupOpen(false);
               nextSolution();
@@ -24,7 +24,7 @@ export default function NewOrderButton() {
           >
             Yes
           </button>
-          <button id="no-option" onClick={() => setPopupOpen(false)}>
+          <button className="no-option" onClick={() => setPopupOpen(false)}>
             No
           </button>
         </div>
