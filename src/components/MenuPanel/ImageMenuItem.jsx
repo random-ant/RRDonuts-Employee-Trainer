@@ -3,7 +3,7 @@ import "./menu.css";
 
 export default function ImageMenuItem({ itemID, src, bgColor }) {
   const { addToCart } = useOrder();
-  const path = `static/drinks-logos/${src}`;
+  const path = `./drinks-logos/${src}`;
 
   return (
     <button
