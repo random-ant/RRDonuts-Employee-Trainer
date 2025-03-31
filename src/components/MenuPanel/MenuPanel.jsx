@@ -10,6 +10,7 @@ import {
 import {
   KolachesPage,
   CakesPiesPage,
+  CakesPage,
   CookieBreadPage,
   MerchPage,
   DrinksPage,
@@ -38,6 +39,8 @@ export default function MenuPanel() {
         return <KolachesPage />;
       case 7:
         return <CakesPiesPage />;
+      case 7.5:
+        return <CakesPage />;
       case 8:
         return <CookieBreadPage />;
       case 9:

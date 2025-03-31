@@ -12,31 +12,31 @@ export default function useSolution() {
    * @return {String} empty string if successful, error message otherwise
    */
   const checkOrder = () => {
-    console.log(currSolution);
     var errorMsg = "";
     var numInOrder = 0;
 
     // check customer name
-    if (customerName !== currSolution.customer_name) errorMsg = "Customer name is incorrect";
+    if (customerName.toLowerCase() !== currSolution.customer_name.toLowerCase())
+      errorMsg = "Customer name is incorrect";
 
+    // check if wrong item is in solution
     for (const item of userOrder) {
       if (!currSolution.parts.has(item.id)) {
-        // check if wrong item is in solution
         errorMsg = "There's an item that's shouldn't be there";
         break;
       }
 
       numInOrder++;
       const requirements = currSolution.parts.get(item.id);
-      // check item has correct quantity
+      // check if item has correct quantity
       if (item.quantity != requirements.amount) errorMsg = "Quantity of item is incorrect";
     }
 
     // check if all item in solution have been covered
     if (numInOrder !== currSolution.parts.size) errorMsg = "There is an item missing";
 
+    // reset everything if the order is correct
     if (errorMsg === "") {
-      // reset everything
       nextSolution();
     }
 

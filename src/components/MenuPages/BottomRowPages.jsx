@@ -24,8 +24,13 @@ export function KolachesPage() {
         <div className="kolache-items">
           <MenuItem itemID={603} color="rgb(247,212,33)" />
           <MenuItem itemID={604} color="rgb(117,204,55)" />
-          <MenuItem isDozen itemID={603} display="DOZ REG PLAIN" color="rgb(247,212,33)" />
-          <MenuItem isDozen itemID={604} display="DZN REG CHEESE" color="rgb(117,204,55)" />
+          <MenuItem isDozen itemID={603} display="DOZ LG CHEESE SAUS" color="rgb(247,212,33)" />
+          <MenuItem
+            isDozen
+            itemID={604}
+            display="DZN LG JAL/CHZ SAUS"
+            color="rgb(117,204,55)"
+          />
         </div>
       </div>
     </div>
@@ -33,13 +38,16 @@ export function KolachesPage() {
 }
 
 export function CakesPiesPage() {
+  const { setCurrMenuPage } = useContext(CurrMenuPageContext);
+
   return (
     <div className="default-container">
       <MenuItem itemID={701} />
       <MenuItem itemID={702} />
       <button
-        className="menu-item disabled-button"
+        className="menu-item"
         style={{ backgroundColor: "rgb(0, 225, 255)" }}
+        onClick={() => setCurrMenuPage(7.5)}
       >
         CAKES
       </button>
@@ -55,7 +63,26 @@ export function CakesPiesPage() {
   );
 }
 
-export function CakesPage() {}
+export function CakesPage() {
+  return (
+    <div className="default-container">
+      <MenuItem itemID={751} />
+      <MenuItem itemID={752} />
+      <MenuItem itemID={753} />
+      <div className="spacer" />
+      <MenuItem itemID={754} />
+      <MenuItem itemID={755} />
+      <MenuItem itemID={756} />
+      <MenuItem itemID={757} />
+      <MenuItem itemID={758} />
+      <MenuItem itemID={759} />
+      <MenuItem itemID={760} />
+      <MenuItem itemID={761} />
+      <MenuItem itemID={762} />
+      <MenuItem itemID={763} />
+    </div>
+  );
+}
 
 export function CookieBreadPage() {
   return (
