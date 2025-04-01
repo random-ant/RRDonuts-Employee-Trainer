@@ -10,13 +10,15 @@ export default function Prompter() {
   return (
     <>
       <div className="prompt-container" onClick={() => setPopupOpen(true)}>
-        <span className="custName">{currSolution.customer_name}</span>: {currSolution.prompt}
+        <span className="customer-name-display">{currSolution.customer_name}</span>:{" "}
+        {currSolution.prompt}
       </div>
 
       <Popup isOpen={isPopupOpen} onClose={() => setPopupOpen(false)}>
         <h3>Customer Order</h3>
         <br />
-        <span className="custName">{currSolution.customer_name}</span>: {currSolution.prompt}
+        <span className="customer-name-display">{currSolution.customer_name}</span>:{" "}
+        {currSolution.prompt}
       </Popup>
     </>
   );

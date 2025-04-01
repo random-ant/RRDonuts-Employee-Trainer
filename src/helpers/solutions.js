@@ -41,7 +41,7 @@ const SOLUTION_LITERALS = [
       [101, 3],
       [108, 12],
       [1006, 2],
-      [1154, 3, ["regular"]],
+      [1154, 3],
     ],
   ],
 
@@ -71,7 +71,7 @@ const SOLUTION_LITERALS = [
 
   [
     "Laura",
-    "Can I have 3 glazed donuts, 3 maple donuts, 3 strawberry sprinkled donuts, 2 chocolate sprinkled donuts, 1 Bavarian cream donut, 1dz donut holes, and 1 large Dr. Pepper? (Mention that adding 1 more iced/cake donut will make the order cheaper because of the price break rule. Note Bavarian Cream doesn’t apply to price break. Assume the customer adds 1 extra glazed.)",
+    "Can I have 3 glazed donuts, 3 maple donuts, 3 strawberry sprinkled donuts, 2 chocolate sprinkled donuts, 1 Bavarian cream donut, 1dz donut holes, and 1 large Dr. Pepper? \n(Mention that adding 1 more iced/cake donut will make the order cheaper because of the price break rule. Note Bavarian Cream doesn’t apply to price break. Assume the customer adds 1 extra glazed.)",
     [
       [101, 4],
       [104, 3],
@@ -85,7 +85,7 @@ const SOLUTION_LITERALS = [
 
   [
     "Daniel",
-    "Can I have 1 large jalapeño cheese kolache, 1 regular cheese kolache, 1 TX-sized cinnamon roll, and 1 regular coffee? (Ask if they want cream and sugar. Assume yes for both.)",
+    "Can I have 1 large jalapeño cheese kolache, 1 regular cheese kolache, 1 TX-sized cinnamon roll, and 1 regular coffee? \n(Ask if they want cream and sugar. Assume yes for both.)",
     [
       [604, 1],
       [602, 1],
@@ -96,20 +96,20 @@ const SOLUTION_LITERALS = [
 
   [
     "Sophia",
-    "Can I have 1dz glazed donuts in two separate boxes? (Type in memo: “2bx of 6 glazed donuts.”",
+    "Can I have 1dz glazed donuts in two separate boxes? \n(Type in memo: “2bx of 6 glazed donuts.”",
     [[101, 12, ["MEMO: 2bx of 6 glazed donuts"]]],
   ],
 
   [
     "Matthew",
-    "Can I have 3 strawberry fruit kolaches, 2 glazed donuts, 2 blueberry fruit kolaches, 3 cream cheese kolaches, 2 maple donuts, and 3 regular Cokes? (Mention that Coke isn’t available and offer Pepsi or Dr. Pepper instead. Assume they want Pepsi.)",
+    "Can I have 3 strawberry fruit kolaches, 2 glazed donuts, 2 blueberry fruit kolaches, 3 cream cheese kolaches, 2 maple donuts, and 3 regular Cokes? \n(Mention that Coke isn’t available and offer Pepsi or Dr. Pepper instead. Assume they want Pepsi.)",
     [
       [506, 3],
       [101, 2],
       [507, 2],
       [505, 3],
       [104, 2],
-      [1009, 3, ["regular"]],
+      [1009, 3],
     ],
   ],
 
@@ -119,7 +119,7 @@ const SOLUTION_LITERALS = [
     [
       [101, 2],
       [108, 12],
-      [1012, 1, ["regular"]],
+      [1012, 1],
     ],
   ],
 
@@ -152,7 +152,7 @@ const SOLUTION_LITERALS = [
       [101, 3],
       [402, 1],
       [306, 1],
-      [1009, 1, ["regular"]],
+      [1009, 1],
     ],
   ],
 
@@ -169,12 +169,12 @@ const SOLUTION_LITERALS = [
 
   [
     "Carlos",
-    "Can I have 2 chocolate cake, 2 reg sausage kolaches, 1dz glazed, and 1 reg Starry? (All meat kolaches come with sausage, but ask if the customer wants it with cheese or not. Assume they don't.)",
+    "Can I have 2 chocolate cake, 2 reg sausage kolaches, 1dz glazed, and 1 reg Starry? \n(All meat kolaches come with sausage, but ask if the customer wants it with cheese or not. Assume they don't.)",
     [
       [202, 2],
       [601, 2],
       [101, 12],
-      [1010, 1, ["regular"]],
+      [1010, 1],
     ],
   ],
 
@@ -197,7 +197,7 @@ const SOLUTION_LITERALS = [
       [102, 1],
       [604, 1],
       [307, 1],
-      [1004, 1, ["regular"]],
+      [1004, 1],
     ],
   ],
 
@@ -208,7 +208,7 @@ const SOLUTION_LITERALS = [
       [101, 12],
       [109, 1],
       [603, 2],
-      [1017, 1, ["regular"]],
+      [1017, 1],
     ],
   ],
 
@@ -230,7 +230,7 @@ const SOLUTION_LITERALS = [
       [501, 1],
       [108, 12],
       [306, 2],
-      [1012, 1, ["regular"]],
+      [1012, 1],
     ],
   ],
 
@@ -264,7 +264,7 @@ const SOLUTION_LITERALS = [
       [601, 1],
       [402, 1],
       [301, 1],
-      [1009, 1, ["regular"]],
+      [1009, 1],
     ],
   ],
 
@@ -299,7 +299,7 @@ const SOLUTION_LITERALS = [
       [302, 1],
       [603, 1],
       [101, 12],
-      [1017, 1, ["regular"]],
+      [1017, 1],
     ],
   ],
 
@@ -321,7 +321,7 @@ const SOLUTION_LITERALS = [
       [101, 2],
       [108, 12],
       [301, 1],
-      [1020, 1, ["regular"]],
+      [1020, 1],
     ],
   ],
 
@@ -333,7 +333,7 @@ const SOLUTION_LITERALS = [
       [202, 1],
       [303, 1],
       [604, 1],
-      [1151, 1, ["regular"]],
+      [1151, 1],
     ],
   ],
 
@@ -354,7 +354,7 @@ const SOLUTION_LITERALS = [
         [302, 1],
         [301, 1],
         [402, 1],
-        [1009, 1, ["regular"]],
+        [1009, 1],
       ],
     ],
 
@@ -376,7 +376,7 @@ const SOLUTION_LITERALS = [
         [307, 1],
         [501, 2],
         [108, 12],
-        [1014, 1, ["regular"]],
+        [1014, 1],
       ],
     ],
 
@@ -398,7 +398,7 @@ const SOLUTION_LITERALS = [
         [506, 1],
         [202, 1],
         [505, 1],
-        [1009, 1, ["regular"]],
+        [1009, 1],
       ],
     ],
 
@@ -409,7 +409,7 @@ const SOLUTION_LITERALS = [
         [401, 1],
         [602, 1],
         [306, 2],
-        [1151, 1, ["regular"]],
+        [1151, 1],
       ],
     ],
 
@@ -431,7 +431,7 @@ const SOLUTION_LITERALS = [
         [101, 3],
         [603, 1],
         [302, 1],
-        [1020, 1, ["regular"]],
+        [1020, 1],
       ],
     ],
 
@@ -448,7 +448,7 @@ const SOLUTION_LITERALS = [
 
     [
       "Nathan",
-      "Can I have 1 glazed, 1 regular sausage and cheese kolache, half a dz donut holes, and 1 large sweet tea? (half a dozen = 6)",
+      "Can I have 1 glazed, 1 regular sausage and cheese kolache, half a dz donut holes, and 1 large sweet tea? \n(half a dozen = 6)",
       [
         [101, 1],
         [602, 1],

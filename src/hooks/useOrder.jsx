@@ -3,34 +3,12 @@ import { OrderContext, QuantityContext } from "../helpers/context";
 import getItem from "../helpers/menuItems";
 
 export class OItem {
-  constructor(
-    id,
-    name,
-    quantity,
-    price,
-    memo = "",
-    separate = false,
-    boxed = false,
-    addChocolate = false,
-    addPowder = false,
-    noIce = false,
-    easyIce = false,
-    bag = false,
-    noAction = false
-  ) {
+  constructor(id, name, quantity, price, memo = "") {
     this.id = id;
     this.name = name;
     this.quantity = quantity;
     this.price = price;
     this.memo = memo;
-    this.hasSeparate = separate;
-    this.hasBoxed = boxed;
-    this.hasChocolate = addChocolate;
-    this.hasPowder = addPowder;
-    this.hasNoIce = noIce;
-    this.hasEasyIce = easyIce;
-    this.hasBag = bag;
-    this.hasNoAction = noAction;
   }
 }
 

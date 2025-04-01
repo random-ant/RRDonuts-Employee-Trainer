@@ -6,22 +6,28 @@ export default function MenuHeader() {
   const { currMenuPage } = useContext(CurrMenuPageContext);
 
   if (currMenuPage >= 10) {
-    return (
-      <div className="drink-menu-header">
-        <button className="menu-item">REGULAR</button>
-        <button
-          className="menu-item"
-          style={{
-            visibility: currMenuPage == 10 ? "hidden" : "visible",
-            backgroundColor: "blue",
-          }}
-        >
-          MEMO
-        </button>
-        <button className="menu-item">LARGE</button>
-      </div>
-    );
+    return <DrinksHeader />;
   } else return <QuantitySelectHeader />;
+}
+
+function DrinksHeader() {
+  const { currMenuPage } = useContext(CurrMenuPageContext);
+
+  return (
+    <div className="drink-menu-header">
+      <button className="menu-item">REGULAR</button>
+      <button
+        className="menu-item"
+        style={{
+          visibility: currMenuPage == 10 ? "hidden" : "visible",
+          backgroundColor: "blue",
+        }}
+      >
+        MEMO
+      </button>
+      <button className="menu-item">LARGE</button>
+    </div>
+  );
 }
 
 function QuantitySelectHeader() {
@@ -45,7 +51,7 @@ function QuantityButton({ count }) {
 
   return (
     <button
-      className={`quantity-button ${currItemQuantity == count ? "active-quantity" : ""}`}
+      className={`quantity-button ${currItemQuantity == count ? "active-header-button" : ""}`}
       onClick={() => {
         if (currItemQuantity == count) {
           setCurrItemQuantity(1);

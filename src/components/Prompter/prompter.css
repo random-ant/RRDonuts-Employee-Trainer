@@ -6,12 +6,13 @@
   cursor: pointer;
   overflow: scroll;
   box-sizing: border-box;
+  white-space: pre-line;
 }
 .prompt-container::-webkit-scrollbar {
   display: none; /* remove scroll bar */
 }
 
-.custName {
+.customer-name-display {
   font-weight: bold;
   text-decoration: underline;
   color: rgb(0, 0, 0);

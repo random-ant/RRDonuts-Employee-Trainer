@@ -35,7 +35,7 @@
   cursor: pointer;
 }
 
-.active-quantity {
+.active-header-button {
   filter: brightness(90%);
   border-color: aqua;
 }
@@ -48,15 +48,6 @@
 }
 
 /* MENU STUFF */
-
-.menu-item {
-  padding: 5%;
-  height: 100%;
-  font-size: 1vw;
-  border-radius: 1vw;
-  text-align: center;
-  cursor: pointer;
-}
 
 .menu-buttons-container {
   display: "flex";
