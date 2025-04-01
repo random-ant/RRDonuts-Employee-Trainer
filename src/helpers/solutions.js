@@ -1,5 +1,5 @@
 const SOLUTION_LITERALS = [
-  // customer_name, prompt, [[item_id, quantity, [modifiers]], note/comment
+  // customer_name, prompt, [[item_id, quantity, (modifiers)]...]
   ["John", "Can I have 6 glazed donuts?", [[101, 6]]],
 
   [
@@ -23,15 +23,15 @@ const SOLUTION_LITERALS = [
 
   [
     "Sarah",
-    "Can I have 3 glazed donuts, 2 blueberry cake donuts, 2 plain cake donuts, 2 chocolate cake donuts, and 2 spice cake donuts?",
+    "Can I have 3 glazed donuts, 2 blueberry cake donuts, 2 plain cake donuts, 2 chocolate cake donuts, and 2 spice cake donuts? (Mention the price break for adding 2 more iced/cake donuts for 8 cents. Assume the customer added 2 additional strawberry sprinkled donuts)",
     [
       [101, 3],
       [203, 2],
       [201, 2],
       [202, 2],
       [204, 2],
+      [107, 2],
     ],
-    "Recognize the price break should be explained here. There are 10 donuts, the customer should be encouraged to order 2 more iced donuts/cake donuts for 8 cents.",
   ],
 
   [
@@ -47,14 +47,14 @@ const SOLUTION_LITERALS = [
 
   [
     "Jessica",
-    "Can I have a Texas-sized half-and-half donut, 2dz donut holes, 1 chocolate milk, and 1 regular sausage and cheese kolache?",
+    "Can I have a Texas-sized half-and-half donut, 2dz donut holes, 1 chocolate milk, and 1 regular sausage and cheese kolache? (Ask if they want the 2dz donut holes in separate bags or one bag. Assume they wanted a separate bag.)",
     [
       [110, 1],
       [108, 24],
       [1007, 1],
       [602, 1],
+      [108, 24, ["MEMO: separate"]],
     ],
-    "Recognize that 2dz donut holes are being ordered so the order taker needs to ask if the customer wants them in separate bags (2bgs of 1dz) or to keep them in one bag.",
   ],
 
   [
@@ -71,41 +71,38 @@ const SOLUTION_LITERALS = [
 
   [
     "Laura",
-    "Can I have 3 glazed donuts, 3 maple donuts, 3 strawberry sprinkled donuts, 2 chocolate sprinkled donuts, 1 bavarian cream donut, 1dz donut holes, and 1 large Dr. Pepper?",
+    "Can I have 3 glazed donuts, 3 maple donuts, 3 strawberry sprinkled donuts, 2 chocolate sprinkled donuts, 1 Bavarian cream donut, 1dz donut holes, and 1 large Dr. Pepper? (Mention that adding 1 more iced/cake donut will make the order cheaper because of the price break rule. Note Bavarian Cream doesn’t apply to price break. Assume the customer adds 1 extra glazed.)",
     [
-      [101, 3],
+      [101, 4],
       [104, 3],
-      [103, 3],
+      [107, 3],
       [106, 2],
       [303, 1],
       [108, 12],
       [1012, 1, ["large"]],
     ],
-    "Note: Recognize that there are 11 iced donuts. The price break rule also applies here. 11 donuts are $13.09 so tell the customer that if they add 1 more iced/cake donut it’ll be cheaper ($11.98). The bavarian cream donut doesn’t apply to the price break rule.",
   ],
 
   [
     "Daniel",
-    "Can I have 1 large jalapeno cheese kolache, 1 regular cheese kolache, 1 tx-sized cinnamon roll, and 1 regular coffee?",
+    "Can I have 1 large jalapeño cheese kolache, 1 regular cheese kolache, 1 TX-sized cinnamon roll, and 1 regular coffee? (Ask if they want cream and sugar. Assume yes for both.)",
     [
       [604, 1],
       [602, 1],
       [502, 1],
-      [1001, 1],
+      [1001, 1, ["MEMO: cream sugar"]],
     ],
-    "Recognize that they ordered a regular coffee and ask if they want to add any cream and sugar to their coffee.",
   ],
 
   [
     "Sophia",
-    "Can I have 1dz glazed donuts in two separate boxes?",
+    "Can I have 1dz glazed donuts in two separate boxes? (Type in memo: “2bx of 6 glazed donuts.”",
     [[101, 12, ["MEMO: 2bx of 6 glazed donuts"]]],
-    "Need to type in the memo box '2bx of 6 glazed donuts'",
   ],
 
   [
     "Matthew",
-    "Can I have 3 strawberry fruit kolaches, 2 glazed donuts, 2 blueberry fruit kolaches, 3 cream cheese kolaches, 2 maple donuts, and 3 regular cokes?",
+    "Can I have 3 strawberry fruit kolaches, 2 glazed donuts, 2 blueberry fruit kolaches, 3 cream cheese kolaches, 2 maple donuts, and 3 regular Cokes? (Mention that Coke isn’t available and offer Pepsi or Dr. Pepper instead. Assume they want Pepsi.)",
     [
       [506, 3],
       [101, 2],
@@ -114,7 +111,6 @@ const SOLUTION_LITERALS = [
       [104, 2],
       [1009, 3, ["regular"]],
     ],
-    "Recognize that we don’t have coke. Offer Pepsi or Dr. Pepper instead. We don’t like saying we don’t have things without suggesting an alternative.",
   ],
 
   [
@@ -173,7 +169,7 @@ const SOLUTION_LITERALS = [
 
   [
     "Carlos",
-    "Can I have 2 chocolate cake, 2 reg sausage kolaches, 1dz glazed, and 1 reg Starry?",
+    "Can I have 2 chocolate cake, 2 reg sausage kolaches, 1dz glazed, and 1 reg Starry? (All meat kolaches come with sausage, but ask if the customer wants it with cheese or not. Assume they don't.)",
     [
       [202, 2],
       [601, 2],
@@ -452,7 +448,7 @@ const SOLUTION_LITERALS = [
 
     [
       "Nathan",
-      "Can I have 1 glazed, 1 regular sausage and cheese kolache, half a dz donut holes, and 1 large sweet tea?",
+      "Can I have 1 glazed, 1 regular sausage and cheese kolache, half a dz donut holes, and 1 large sweet tea? (half a dozen = 6)",
       [
         [101, 1],
         [602, 1],
@@ -470,9 +466,7 @@ for (let i = 0; i < SOLUTION_LITERALS.length; i++) {
   const inside_items = new Map();
   for (const item of lit[2]) {
     let mods = [];
-    if (item.length > 2) {
-      mods = item[2];
-    }
+    if (item.length > 2) mods = item[2];
 
     // [item_id] --> amount, modifiers
     inside_items.set(item[0], {
@@ -495,5 +489,6 @@ export function getRandSolution() {
 }
 
 function getSolution(solutionID) {
+  // console.log(SOLUTIONS[solutionID]);
   return SOLUTIONS[solutionID];
 }

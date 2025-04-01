@@ -1,6 +1,6 @@
 .order-container {
   display: grid;
-  grid-template-rows: 12% 5% 1fr 12%;
+  grid-template-rows: 17% 5% 1fr 12%;
   background-color: rgb(206, 206, 206);
   border: 1px solid #1c1c1c;
 }
