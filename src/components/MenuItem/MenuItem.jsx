@@ -1,6 +1,6 @@
 import useOrder from "../../hooks/useOrder";
 import getItem from "../../helpers/menuItems";
-import "./menu.css";
+import "./menu-item.css";
 
 function deconstructRGB(rgbColor) {
   const values = rgbColor

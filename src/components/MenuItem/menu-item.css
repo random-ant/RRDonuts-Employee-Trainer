@@ -1,0 +1,8 @@
+.menu-item {
+  padding: 5%;
+  height: 100%;
+  font-size: 1vw;
+  border-radius: 1vw;
+  text-align: center;
+  cursor: pointer;
+}

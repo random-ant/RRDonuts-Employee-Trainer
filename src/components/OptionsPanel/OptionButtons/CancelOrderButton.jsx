@@ -1,6 +1,10 @@
 import { useState, useContext } from "react";
-import { OrderContext, SelectedItemsContext, CustomerNameContext } from "../../helpers/context";
-import Popup from "../Popup/Popup";
+import {
+  OrderContext,
+  SelectedItemsContext,
+  CustomerNameContext,
+} from "../../../helpers/context";
+import Popup from "../../Popup/Popup";
 
 export default function CancelOrderButton() {
   const [isPopupOpen, setPopupOpen] = useState(false);

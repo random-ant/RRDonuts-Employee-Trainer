@@ -1,6 +1,6 @@
 import { useState } from "react";
-import Popup from "../Popup/Popup";
-import useSolution from "../../hooks/useSolution";
+import Popup from "../../Popup/Popup";
+import useSolution from "../../../hooks/useSolution";
 
 export default function NewOrderButton() {
   const [isPopupOpen, setPopupOpen] = useState(false);

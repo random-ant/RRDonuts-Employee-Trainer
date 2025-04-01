@@ -1,4 +1,4 @@
-import MenuItem from "../MenuPanel/MenuItem";
+import MenuItem from "../MenuItem/MenuItem";
 import "./menuPages.css";
 import "../MenuPanel/menu.css";
 

@@ -1,9 +1,9 @@
 import { useContext } from "react";
 import { OrderContext, SelectedItemsContext } from "../../helpers/context";
-import NameButton from "./NameButton";
-import NewOrderButton from "./NewOrderButton";
+import NameButton from "./OptionButtons/NameButton";
+import NewOrderButton from "./OptionButtons/NewOrderButton";
 import SideQuantityButton from "./SideQuantityButton";
-import CancelOrderButton from "./CancelOrderButton";
+import CancelOrderButton from "./OptionButtons/CancelOrderButton";
 import "./options.css";
 
 export default function OptionsPanel() {

@@ -1,5 +1,5 @@
 import useOrder from "../../hooks/useOrder";
-import "./menu.css";
+import "./menu-item.css";
 
 export default function ImageMenuItem({ itemID, src, bgColor }) {
   const { addToCart } = useOrder();
@@ -7,7 +7,7 @@ export default function ImageMenuItem({ itemID, src, bgColor }) {
 
   return (
     <button
-      className={"menu-item " + ""}
+      className="menu-item"
       onClick={() => addToCart(itemID, 1)}
       style={{
         backgroundImage: `url(${path})`,

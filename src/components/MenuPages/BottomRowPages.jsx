@@ -1,6 +1,6 @@
 import { useContext } from "react";
-import MenuItem from "../MenuPanel/MenuItem";
-import ImageMenuItem from "../MenuPanel/ImageMenuItem";
+import MenuItem from "../MenuItem/MenuItem";
+import ImageMenuItem from "../MenuItem/ImageMenuItem";
 import { CurrMenuPageContext } from "../../helpers/context";
 import "./menuPages.css";
 
