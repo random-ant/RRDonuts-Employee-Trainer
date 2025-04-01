@@ -1,0 +1,35 @@
+/* QUANTITY HEADER */
+
+.quantity-select-container {
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(9, 1fr); /* 9 equal columns */
+  gap: 10px;
+}
+
+.header-button {
+  border-radius: 3%;
+  font-size: 1.3vw;
+  letter-spacing: 0.05rem;
+  width: 90%;
+  height: 100%;
+  cursor: pointer;
+}
+
+.active-header-button {
+  filter: brightness(90%);
+  border-color: aqua;
+}
+
+/* DRINK HEADER */
+
+.drink-menu-header {
+  display: grid;
+  grid-template-columns: 1fr 25% 1fr;
+  gap: 1vw;
+}
+
+.memo-button {
+  cursor: pointer;
+  background-color: rgb(1, 235, 243);
+}

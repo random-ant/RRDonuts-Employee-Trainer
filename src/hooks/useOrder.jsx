@@ -1,13 +1,15 @@
 import { useContext } from "react";
-import { OrderContext, QuantityContext } from "../helpers/context";
+import { OrderContext, QuantityContext } from "../helpers/Context";
+import useMods from "./useMods";
 import getItem from "../helpers/menuItems";
 
 export class OItem {
-  constructor(id, name, quantity, price, memo = "") {
+  constructor(id, name, quantity, price, mods = [], memo = "") {
     this.id = id;
     this.name = name;
     this.quantity = quantity;
     this.price = price;
+    this.mods = mods;
     this.memo = memo;
   }
 }
@@ -15,12 +17,25 @@ export class OItem {
 export default function useOrder() {
   const { userOrder, setUserOrder } = useContext(OrderContext);
   const { currItemQuantity, setCurrItemQuantity } = useContext(QuantityContext);
+  const { getModifications, getMemo, clearModsAndMemo } = useMods();
 
   const addToCart = (itemID, quantityMultiplier = 1) => {
     const item = getItem(itemID);
     const amountToAdd = quantityMultiplier * currItemQuantity;
-    const itemObj = new OItem(itemID, item.display_name, amountToAdd, item.price);
 
+    const itemObj = new OItem(
+      itemID,
+      item.display_name,
+      amountToAdd,
+      item.price,
+      getModifications(),
+      getMemo()
+    );
+
+    // remove the current stored modifcations and memo
+    clearModsAndMemo();
+
+    // check if item already exists in userOrder
     let orderContainsItem = false;
     for (let i = 0; i < userOrder.length; i++) {
       if (userOrder[i].name === item.display_name) {
@@ -29,8 +44,8 @@ export default function useOrder() {
       }
     }
 
+    // if item already exists in userOrder, update existing quantity
     if (orderContainsItem) {
-      // if item already exists in userOrder, update existing quantity
       setUserOrder(
         userOrder.map((orderItem) => {
           if (orderItem.name === item.display_name)

@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import MenuHeader from "./MenuHeader";
+import MenuHeader from "../MenuHeader/MenuHeader";
 import {
   DonutPage,
   CakeDonutsPage,

@@ -56,8 +56,14 @@
 }
 
 .order-modifications {
-  padding-left: 30px;
+  margin-left: 3.5vw;
+  text-transform: uppercase;
+  font-size: 0.9vw;
   color: rgb(0, 51, 255);
+}
+
+.order-modifications > * {
+  margin-top: 0.8vh;
 }
 
 .checkout-button {
