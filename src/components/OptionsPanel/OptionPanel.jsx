@@ -11,7 +11,22 @@ export default function OptionsPanel() {
   const { selectedItems, setSelectedItems } = useContext(SelectedItemsContext);
 
   const clickDelete = () => {
-    setUserOrder(userOrder.filter((item, index) => !selectedItems.includes(index)));
+    // delete last item if no item is selected
+    if (selectedItems.length === 0) {
+      setUserOrder(
+        userOrder.map((item, index) => {
+          if (index === userOrder.length - 1) {
+            return { ...item, quantity: item.quantity - 1 };
+          }
+          return item;
+        })
+      );
+    }
+
+    // delete selected items and empty items
+    setUserOrder((userOrder) =>
+      userOrder.filter((item, index) => !selectedItems.includes(index) && item.quantity > 0)
+    );
     setSelectedItems([]);
   };
 
