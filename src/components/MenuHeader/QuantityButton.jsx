@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { QuantityContext } from "../../helpers/Context";
+import { QuantityContext } from "../../helpers/context";
 import "./menu-header.css";
 
 function QuantityButton({ count }) {

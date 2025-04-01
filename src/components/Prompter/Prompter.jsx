@@ -1,6 +1,6 @@
 import { useContext, useState } from "react";
 import Popup from "../Popup/Popup";
-import { SolutionContext } from "../../helpers/Context";
+import { SolutionContext } from "../../helpers/context";
 import "./prompter.css";
 
 export default function Prompter() {

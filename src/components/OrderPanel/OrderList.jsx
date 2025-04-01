@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { OrderContext, SelectedItemsContext } from "../../helpers/Context";
+import { OrderContext, SelectedItemsContext } from "../../helpers/context";
 import "./orders.css";
 
 export default function OrderList() {

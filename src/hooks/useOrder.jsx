@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { OrderContext, QuantityContext } from "../helpers/Context";
+import { OrderContext, QuantityContext } from "../helpers/context";
 import useMods from "./useMods";
 import getItem from "../helpers/menuItems";
 

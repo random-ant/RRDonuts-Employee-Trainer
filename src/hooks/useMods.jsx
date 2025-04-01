@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { ModsContext } from "../helpers/Context";
+import { ModsContext } from "../helpers/context";
 
 export default function useMods() {
   const { mods, setMods } = useContext(ModsContext);

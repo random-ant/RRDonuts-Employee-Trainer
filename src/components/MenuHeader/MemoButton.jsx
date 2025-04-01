@@ -1,5 +1,5 @@
 import { useState, useContext } from "react";
-import { CurrMenuPageContext, ModsContext } from "../../helpers/Context";
+import { CurrMenuPageContext, ModsContext } from "../../helpers/context";
 import useMods from "../../hooks/useMods";
 import Popup from "../Popup/Popup";
 import "./menu-header.css";

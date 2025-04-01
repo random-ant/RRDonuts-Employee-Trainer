@@ -18,7 +18,7 @@ import {
   ColdCoffeePage,
 } from "../MenuPages/BottomRowPages";
 import "./menu.css";
-import { CurrMenuPageContext } from "../../helpers/Context";
+import { CurrMenuPageContext } from "../../helpers/context";
 
 export default function MenuPanel() {
   const { currMenuPage, setCurrMenuPage } = useContext(CurrMenuPageContext);

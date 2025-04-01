@@ -1,5 +1,5 @@
 import { useContext, useState } from "react";
-import { CustomerNameContext } from "../../helpers/Context";
+import { CustomerNameContext } from "../../helpers/context";
 import OrderList from "./OrderList";
 import Prompter from "../Prompter/Prompter";
 import Popup from "../Popup/Popup";

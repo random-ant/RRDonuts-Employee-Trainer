@@ -3,7 +3,7 @@ import {
   OrderContext,
   SelectedItemsContext,
   CustomerNameContext,
-} from "../../../helpers/Context";
+} from "../../../helpers/context";
 import Popup from "../../Popup/Popup";
 
 export default function CancelOrderButton() {

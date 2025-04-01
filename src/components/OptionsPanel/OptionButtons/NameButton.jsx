@@ -1,6 +1,6 @@
 import { useState, useContext } from "react";
 import Popup from "../../Popup/Popup";
-import { CustomerNameContext } from "../../../helpers/Context";
+import { CustomerNameContext } from "../../../helpers/context";
 
 export default function NameButton() {
   const [isPopupOpen, setPopupOpen] = useState(false);

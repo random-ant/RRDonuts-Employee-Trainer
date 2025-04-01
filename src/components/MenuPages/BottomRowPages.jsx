@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import MenuItem from "../MenuItem/MenuItem";
 import ImageMenuItem from "../MenuItem/ImageMenuItem";
-import { CurrMenuPageContext } from "../../helpers/Context";
+import { CurrMenuPageContext } from "../../helpers/context";
 import "./menuPages.css";
 
 export function KolachesPage() {

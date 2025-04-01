@@ -11,7 +11,7 @@ import {
   CustomerNameContext,
   CurrMenuPageContext,
   ModsContext,
-} from "./helpers/Context";
+} from "./helpers/context";
 import { getRandSolution } from "./helpers/solutions";
 import "./styles.css";
 

@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { CurrMenuPageContext } from "../../helpers/Context";
+import { CurrMenuPageContext } from "../../helpers/context";
 import DrinksHeader from "./DrinksHeader";
 import QuantitySelectHeader from "./QuantitySelectHeader";
 
