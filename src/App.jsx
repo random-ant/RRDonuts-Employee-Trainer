@@ -10,7 +10,8 @@ import {
   SolutionContext,
   CustomerNameContext,
   CurrMenuPageContext,
-} from "./helpers/context";
+  ModsContext,
+} from "./helpers/Context";
 import { getRandSolution } from "./helpers/solutions";
 import "./styles.css";
 
@@ -40,6 +41,7 @@ function ContextProvider({ children }) {
   const [currSolution, setCurrSolution] = useState(getRandSolution());
   const [customerName, setCustomerName] = useState("");
   const [currMenuPage, setCurrMenuPage] = useState(1);
+  const [mods, setMods] = useState([""]); // last item is the memo
 
   return (
     <SelectedItemsContext.Provider value={{ selectedItems, setSelectedItems }}>
@@ -48,7 +50,9 @@ function ContextProvider({ children }) {
           <SolutionContext.Provider value={{ currSolution, setCurrSolution }}>
             <CustomerNameContext.Provider value={{ customerName, setCustomerName }}>
               <CurrMenuPageContext.Provider value={{ currMenuPage, setCurrMenuPage }}>
-                {children}
+                <ModsContext.Provider value={{ mods, setMods }}>
+                  {children}
+                </ModsContext.Provider>
               </CurrMenuPageContext.Provider>
             </CustomerNameContext.Provider>
           </SolutionContext.Provider>

@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { OrderContext, SelectedItemsContext } from "../../helpers/context";
+import { OrderContext, SelectedItemsContext } from "../../helpers/Context";
 import "./orders.css";
 
 export default function OrderList() {
@@ -15,6 +15,7 @@ export default function OrderList() {
       setSelectedItems([...selectedItems, itemIndex]);
     }
   }
+
   return (
     <div className="order-list-container">
       {userOrder.map((item, index) => (
@@ -30,13 +31,10 @@ export default function OrderList() {
           </div>
 
           <div className="order-modifications">
-            <p>{item.memo && item.memo}</p>
-            <p>{item.hasSeparate && "SEPARATE"}</p>
-            <p>{item.hasBoxed && "BOXED"}</p>
-            <p>{item.hasChocolate && "CHOC"}</p>
-            <p>{item.hasPowder && "POWDER"}</p>
-            <p>{item.hasBag && "BAG"}</p>
-            <p>{item.hasNoAction && "NO ACTION"}</p>
+            {/* <p>{item.memo && item.memo}</p> */}
+            {item.mods.map((m, index) => (
+              <p key={index}>{m}</p>
+            ))}
           </div>
         </div>
       ))}

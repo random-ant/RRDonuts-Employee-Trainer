@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { OrderContext, SolutionContext, CustomerNameContext } from "../helpers/context";
+import { OrderContext, SolutionContext, CustomerNameContext } from "../helpers/Context";
 import { getRandSolution } from "../helpers/solutions";
 import getItem from "../helpers/menuItems";
 

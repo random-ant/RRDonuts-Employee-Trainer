@@ -17,7 +17,6 @@ function deconstructRGB(rgbColor) {
 function calculateTextColor(bgColor) {
   const { red, green, blue } = deconstructRGB(bgColor);
   const brightness = (red * 299 + green * 587 + blue * 114) / 1000;
-  console.log(brightness);
   return brightness > 150 ? "black" : "white";
 }
 

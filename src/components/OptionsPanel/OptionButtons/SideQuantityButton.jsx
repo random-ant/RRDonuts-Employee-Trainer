@@ -1,6 +1,6 @@
 import { useState, useContext } from "react";
-import Popup from "../Popup/Popup";
-import { QuantityContext } from "../../helpers/context";
+import Popup from "../../Popup/Popup";
+import { QuantityContext } from "../../../helpers/Context";
 
 export default function SideQuantityButton() {
   const { currItemQuantity, setCurrItemQuantity } = useContext(QuantityContext);

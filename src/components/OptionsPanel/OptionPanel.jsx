@@ -1,8 +1,8 @@
 import { useContext } from "react";
-import { OrderContext, SelectedItemsContext } from "../../helpers/context";
+import { OrderContext, SelectedItemsContext } from "../../helpers/Context";
 import NameButton from "./OptionButtons/NameButton";
 import NewOrderButton from "./OptionButtons/NewOrderButton";
-import SideQuantityButton from "./SideQuantityButton";
+import SideQuantityButton from "./OptionButtons/SideQuantityButton";
 import CancelOrderButton from "./OptionButtons/CancelOrderButton";
 import "./options.css";
 
