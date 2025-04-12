@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import MenuItem from "../MenuItem/MenuItem";
 import ImageMenuItem from "../MenuItem/ImageMenuItem";
+import MemoButton from "../MenuHeader/MemoButton";
 import { CurrMenuPageContext } from "../../helpers/context";
 import "./menuPages.css";
 
@@ -131,8 +132,8 @@ export function DrinksPage() {
   return (
     <div className="drinks-container">
       <div className="drinks-section">
-        <MenuItem itemID={1001} color="rgb(132,82,60)" />
-        <MenuItem itemID={1002} color="rgb(232, 85, 6)" />
+        <MenuItem itemID={1001} display="COFFEE" color="rgb(132,82,60)" />
+        <MenuItem itemID={1001} display="DECAF COFFEE" color="rgb(232, 85, 6)" />
         <div className="spacer" />
         <button
           className="menu-item"
@@ -150,34 +151,35 @@ export function DrinksPage() {
         </button>
       </div>
       <div className="drinks-section">
-        <ImageMenuItem itemID={1003} src="Aquafina.svg" />
-        <MenuItem itemID={1004} color="rgb(255, 199, 108)" />
-        <MenuItem itemID={1005} color="rgb(247, 229, 31)" />
-        <MenuItem itemID={1006} color="rgb(255, 255, 255)" />
-        <MenuItem itemID={1007} color="rgb(132,82,60)" />
-        <MenuItem itemID={1008} color="rgb(237,186,211)" />
+        <ImageMenuItem itemID={1003} itemName="AQUAFINA" src="Aquafina.svg" />
+        <MenuItem itemID={1051} display="ORANGE JUICE" color="rgb(255, 199, 108)" />
+        <MenuItem itemID={1051} display="APPLE JUICE" color="rgb(247, 229, 31)" />
+        <MenuItem itemID={1051} display="WHITE MILK" color="rgb(255, 255, 255)" />
+        <MenuItem itemID={1051} display="CHOC MILK" color="rgb(132,82,60)" />
+        <MenuItem itemID={1051} display="STRAW MILK" color="rgb(237,186,211)" />
       </div>
       <div className="drinks-section">
-        <ImageMenuItem itemID={1009} src="Pepsi.svg" />
-        <ImageMenuItem itemID={1010} src="Diet-Pepsi-Logo.svg" />
-        <ImageMenuItem itemID={1011} src="Pepsi_zerosugar_logo.png" />
-        <ImageMenuItem itemID={1012} src="dr-pepper.png" bgColor="black" />
-        <ImageMenuItem itemID={1013} src="dr-pepper-diet-vector-logo.svg" />
+        <ImageMenuItem itemID={1003} itemName="PEPSI" src="Pepsi.svg" />
+        <ImageMenuItem itemID={1003} itemName="DIET PEPSI" src="Diet-Pepsi-Logo.svg" />
+        <ImageMenuItem itemID={1003} itemName="PEPSI ZERO" src="Pepsi_zerosugar_logo.png" />
+        <ImageMenuItem itemID={1003} itemName="DR PEPPER" src="dr-pepper.png" bgColor="black" />
+        <ImageMenuItem itemID={1003} itemName="DIET DR PEPPER" src="dr-pepper-diet-vector-logo.svg" />
       </div>
       <div className="drinks-section">
-        <ImageMenuItem itemID={1014} src="Sierra_mist_logo.png" />
-        <ImageMenuItem itemID={1015} src="Mountain_Dew_logo.svg" bgColor="rgb(148, 201, 61)" />
-        <MenuItem itemID={1016} color="rgb(255, 244, 123)" />
-        <MenuItem itemID={1017} color="rgb(255, 166, 133)" />
-        <MenuItem itemID={1018} color="rgb(249, 231, 187)" />
-        <MenuItem itemID={1019} color="rgb(247, 229, 31)" />
+        <ImageMenuItem itemID={1003} itemName="SIERRA MIST" src="Sierra_mist_logo.png" />
+        <ImageMenuItem itemID={1003} itemName="MOUNTAIN DEW" src="Mountain_Dew_logo.svg" bgColor="rgb(148, 201, 61)" />
+        <MenuItem itemID={1003} display="LEMONADE" color="rgb(255, 244, 123)" />
+        <MenuItem itemID={1005} display="SWEET TEA" color="rgb(255, 166, 133)" />
+        <MenuItem itemID={1005} display="1/2 TEA" color="rgb(249, 231, 187)" />
+        <MenuItem itemID={1005} display="UNSWEET TEA" color="rgb(247, 229, 31)" />
       </div>
       <div className="drinks-section">
-        <MenuItem itemID={1020} color="rgb(232, 85, 6)" />
-        <MenuItem itemID={1021} color="rgb(1, 142, 1)" />
-        <MenuItem itemID={1022} />
-        <MenuItem itemID={1023} />
-        <MenuItem itemID={1024} />
+        <MenuItem itemID={1003} display="ROOT BEER" color="rgb(232, 85, 6)" />
+        <MenuItem itemID={1003} display="GATORADE" color="rgb(1, 142, 1)" />
+        <MenuItem itemID={1052} />
+        <MenuItem itemID={1053} />
+        <MenuItem itemID={1054} />
+        <MemoButton />
       </div>
     </div>
   );
@@ -186,14 +188,14 @@ export function DrinksPage() {
 export function HotCoffeePage() {
   return (
     <div className="default-container">
-      <MenuItem itemID={1101} />
-      <MenuItem itemID={1102} />
-      <MenuItem itemID={1103} />
+      <MenuItem display="HOT CARAMEL MOCHA" itemID={1011} />
+      <MenuItem display="HOT CARAMEL" itemID={1011} />
+      <MenuItem display="HOT MOCHA" itemID={1011} />
       <div className="spacer" />
-      <MenuItem itemID={1104} />
-      <MenuItem itemID={1105} />
-      <MenuItem itemID={1106} color="rgb(247,105,26)" />
-      <MenuItem itemID={1107} color="rgb(251, 35, 35)" />
+      <MenuItem display="HOT VANILLA" itemID={1011} />
+      <MenuItem display="HOT WHITE CHOC" itemID={1011} />
+      <MenuItem display="HOT PUMPKIN" itemID={1011} color="rgb(247,105,26)" />
+      <MenuItem display="HOT PEPPERMINT WHITE CHOC" itemID={1011} color="rgb(251, 35, 35)" />
     </div>
   );
 }
@@ -201,17 +203,17 @@ export function HotCoffeePage() {
 export function ColdCoffeePage() {
   return (
     <div className="default-container">
-      <MenuItem itemID={1151} />
-      <MenuItem itemID={1152} />
+      <MenuItem display="" itemID={1007} />
+      <MenuItem display="" itemID={1007} />
       <div className="spacer" />
-      <MenuItem itemID={1153} color="rgb(251, 35, 35)" />
-      <MenuItem itemID={1154} />
-      <MenuItem itemID={1155} />
-      <MenuItem itemID={1156} />
+      <MenuItem display="" itemID={1007} color="rgb(251, 35, 35)" />
+      <MenuItem display="" itemID={1007} />
+      <MenuItem display="" itemID={1007} />
+      <MenuItem display="" itemID={1007} />
       <div className="spacer" />
-      <MenuItem itemID={1157} />
-      <MenuItem itemID={1158} />
-      <MenuItem itemID={1159} />
+      <MenuItem display="" itemID={1007} />
+      <MenuItem display="" itemID={1007} />
+      <MenuItem display="" itemID={1009} />
     </div>
   );
 }

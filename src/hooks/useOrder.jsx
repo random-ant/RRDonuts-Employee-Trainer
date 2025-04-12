@@ -23,21 +23,32 @@ export default function useOrder() {
    * Adds an item to the cart. Automatically gets the needed modifications and memo, then resets them.
    * 
    * @param {number} itemID The ID of the item to add to the cart.
+   * @param {string} itemName The name that will displayed in the cart.
    * @param {number} quantityMultiplier How much of the item to add. Default is 1.
    * @returns {void}
    */
-  const addToCart = (itemID, quantityMultiplier = 1) => {
+  const addToCart = (itemID, itemName, quantityMultiplier = 1) => {
     const item = getItem(itemID);
     const amountToAdd = quantityMultiplier * currItemQuantity;
 
     const itemObj = new OItem(
       itemID,
-      item.display_name,
+      itemName,
       amountToAdd,
       item.price,
       getModifications(),
       getMemo()
     );
+
+    // check for drink modifications
+    if (getItem(itemID).display_name.includes("REGULAR")) {
+      // change display names in order panel
+      if (getModifications().includes("large")) {
+        itemObj.name = `${itemObj.name} (LRG)`;
+      } else {
+        itemObj.name = `${itemObj.name} (REG)`;
+      }
+    }
 
     // remove the current stored modifcations and memo
     clearModsAndMemo();

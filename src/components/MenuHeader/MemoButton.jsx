@@ -37,9 +37,6 @@ function MemoButton() {
         onClick={() => {
           setPopupOpen(true);
         }}
-        style={{
-          visibility: currMenuPage == 10 ? "hidden" : "visible",
-        }}
       >
         MEMO
       </button>

@@ -1,4 +1,5 @@
 import useOrder from "../../hooks/useOrder";
+import useMods from "../../hooks/useMods";
 import getItem from "../../helpers/menuItems";
 import "./menu-item.css";
 
@@ -31,13 +32,15 @@ export default function MenuItem({
   let item_name = getItem(itemID).display_name;
   if (display) item_name = display;
 
+  // if it is a drink, then need to add either "REG" or "LRG" to the end of the name
+
   let multiplier = 1;
   if (isDozen) multiplier = 12;
 
   return (
     <button
       className={"menu-item " + className}
-      onClick={() => addToCart(itemID, multiplier)}
+      onClick={() => addToCart(itemID, item_name, multiplier)}
       style={{
         backgroundColor: color,
         color: calculateTextColor(color),
