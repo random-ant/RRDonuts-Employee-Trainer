@@ -203,17 +203,17 @@ export function HotCoffeePage() {
 export function ColdCoffeePage() {
   return (
     <div className="default-container">
-      <MenuItem display="" itemID={1007} />
-      <MenuItem display="" itemID={1007} />
+      <MenuItem display="ICED BLACK COFFEE" itemID={1007} />
+      <MenuItem display="ICED CARAMEL" itemID={1007} />
       <div className="spacer" />
-      <MenuItem display="" itemID={1007} color="rgb(251, 35, 35)" />
-      <MenuItem display="" itemID={1007} />
-      <MenuItem display="" itemID={1007} />
-      <MenuItem display="" itemID={1007} />
+      <MenuItem display="ICED PEPPERMINT WHITE CHOC" itemID={1007} color="rgb(251, 35, 35)" />
+      <MenuItem display="ICED LATTE" itemID={1007} />
+      <MenuItem display="ICED MOCHA" itemID={1007} />
+      <MenuItem display="ICED CARAMEL MOCHA" itemID={1007} />
       <div className="spacer" />
-      <MenuItem display="" itemID={1007} />
-      <MenuItem display="" itemID={1007} />
-      <MenuItem display="" itemID={1009} />
+      <MenuItem display="ICED VANILLA" itemID={1007} />
+      <MenuItem display="ICED WHITE CHOCOLATE" itemID={1007} />
+      <MenuItem display="FROZEN COFFEE" itemID={1009} />
     </div>
   );
 }
