@@ -32,4 +32,5 @@
 .memo-button {
   cursor: pointer;
   background-color: rgb(1, 235, 243);
+  text-align: center;
 }

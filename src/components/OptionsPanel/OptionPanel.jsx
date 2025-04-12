@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { OrderContext, SelectedItemsContext } from "../../helpers/context";
+import useOrder from "../../hooks/useOrder";
 import NameButton from "./OptionButtons/NameButton";
 import NewOrderButton from "./OptionButtons/NewOrderButton";
 import SideQuantityButton from "./OptionButtons/SideQuantityButton";
@@ -9,25 +10,18 @@ import "./options.css";
 export default function OptionsPanel() {
   const { userOrder, setUserOrder } = useContext(OrderContext);
   const { selectedItems, setSelectedItems } = useContext(SelectedItemsContext);
+  const { deleteItems, deleteOneItemInstance } = useOrder();
 
   const clickDelete = () => {
-    // delete last item if no item is selected
-    if (selectedItems.length === 0) {
-      setUserOrder(
-        userOrder.map((item, index) => {
-          if (index === userOrder.length - 1) {
-            return { ...item, quantity: item.quantity - 1 };
-          }
-          return item;
-        })
-      );
+    // delete one of last item if nothing is selected
+    if (selectedItems.length === 0 && userOrder.length > 0) {
+      deleteItems([userOrder.length - 1]);
+    } 
+    // otherwise, remove all selected items
+    else {
+      deleteItems(selectedItems, 999999); 
+      setSelectedItems([]);
     }
-
-    // delete selected items and empty items
-    setUserOrder((userOrder) =>
-      userOrder.filter((item, index) => !selectedItems.includes(index) && item.quantity > 0)
-    );
-    setSelectedItems([]);
   };
 
   return (

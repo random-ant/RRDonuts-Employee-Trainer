@@ -19,6 +19,13 @@ export default function useOrder() {
   const { currItemQuantity, setCurrItemQuantity } = useContext(QuantityContext);
   const { getModifications, getMemo, clearModsAndMemo } = useMods();
 
+  /**
+   * Adds an item to the cart. Automatically gets the needed modifications and memo, then resets them.
+   * 
+   * @param {number} itemID The ID of the item to add to the cart.
+   * @param {number} quantityMultiplier How much of the item to add. Default is 1.
+   * @returns {void}
+   */
   const addToCart = (itemID, quantityMultiplier = 1) => {
     const item = getItem(itemID);
     const amountToAdd = quantityMultiplier * currItemQuantity;
@@ -65,5 +72,47 @@ export default function useOrder() {
     setCurrItemQuantity(1);
   };
 
-  return { addToCart };
+  /**
+   * Modify the memos of items from the order given their indices in userOrder. Automatically gets the memo.
+   * 
+   * @param {Array.<number>} itemIndices  - An array of the indices of all items to delete. Each index is the position in userOrder the item is contained at.
+   */
+  const modifyItemMemos = (itemIndices) => {
+    const currMemo = getMemo();
+    setUserOrder(
+      userOrder.map((item, index) => {
+        if (itemIndices.includes(index)) {
+          console.log(item);
+          return { ...item, memo: currMemo };
+        } 
+        else return item;
+      }
+    ));
+  }
+
+  /**
+   * Deletes a certain amount of each given item from the order. If a given item goes to 0, it is removed completely.
+   * 
+   * @param {Array.<number>} itemIndices  - An array of the indices of all items to delete. Each index is the position in userOrder the item is contained at.
+   * @param {number} quantity - The amount of each item to delete. Default is 1.
+   * @returns {void}
+   */
+  const deleteItems = (itemIndices, quantity = 1) => {
+    // subtract quantity from each item in userOrder at the given indices
+    setUserOrder(
+      userOrder.map((item, index) => {
+        if (itemIndices.includes(index)) {
+          return { ...item, quantity: item.quantity - quantity };
+        } 
+        return item;
+      })
+    );
+
+    // remove items with quantity <= 0 from userOrder
+    setUserOrder((prevOrder) => {
+      return prevOrder.filter((item) => item.quantity > 0);
+    });
+  }
+
+  return { addToCart, modifyItemMemos, deleteItems };
 }

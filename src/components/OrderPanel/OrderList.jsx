@@ -31,10 +31,10 @@ export default function OrderList() {
           </div>
 
           <div className="order-modifications">
-            {/* <p>{item.memo && item.memo}</p> */}
             {item.mods.map((m, index) => (
               <p key={index}>{m}</p>
             ))}
+            <p>{item.memo && item.memo}</p>
           </div>
         </div>
       ))}
