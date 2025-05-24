@@ -1,5 +1,4 @@
 import useOrder from "../../hooks/useOrder";
-import useMods from "../../hooks/useMods";
 import getItem from "../../helpers/menuItems";
 import "./menu-item.css";
 

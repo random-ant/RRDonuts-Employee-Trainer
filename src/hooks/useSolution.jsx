@@ -9,7 +9,8 @@ export default function useSolution() {
   const { customerName, setCustomerName } = useContext(CustomerNameContext);
 
   /**
-   * Checks order against solution
+   * Checks order against the current solution.
+   *
    * @return {String} empty string if successful, error message otherwise
    */
   const checkOrder = () => {
@@ -32,7 +33,7 @@ export default function useSolution() {
     for (const [partId, partData] of currSolution.parts.entries()) {
       const orderItem = userOrder.find((item) => item.id === partId);
       if (!orderItem) {
-        errorMsg = `There is an item missing from the order (${getItem(partId).display_name})`;
+        errorMsg = `There is an item missing from the order\n(${getItem(partId).display_name})`;
         break;
       } else if (
         orderItem.quantity !== partData.amount &&
