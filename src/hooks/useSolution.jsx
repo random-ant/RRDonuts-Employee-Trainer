@@ -43,7 +43,12 @@ export default function useSolution() {
 
     // reset everything if the order is correct
     if (errorMsg === "") {
+      let good = new Audio("./sounds/good.mp3");
+      good.play();
       nextSolution();
+    } else {
+      // let bad = new Audio("./sounds/wronganswer-37702.mp3");
+      // bad.play();
     }
 
     return errorMsg;
