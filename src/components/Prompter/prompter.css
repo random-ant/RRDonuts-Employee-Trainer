@@ -1,15 +1,28 @@
 .prompt-container {
+  min-height: 20vh;
+  /* allow expansion */
+  flex-shrink: 0;
+
   background-color: rgb(235, 235, 235);
   padding: 1vmin;
-  font-size: 2vh;
+  font-size: 2.4vh;
   border-bottom: 2px solid black;
   cursor: pointer;
-  overflow: scroll;
+  overflow: auto;
   box-sizing: border-box;
   white-space: pre-line;
 }
+
 .prompt-container::-webkit-scrollbar {
-  display: none; /* remove scroll bar */
+  display: none;
+  /* remove scroll bar */
+}
+
+.prompt-note {
+  margin-top: 1em;
+  font-size: 90%;
+  font-style: italic;
+  font-weight: bold;
 }
 
 .customer-name-display {

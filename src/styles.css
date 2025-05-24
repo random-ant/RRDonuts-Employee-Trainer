@@ -20,7 +20,8 @@
   background-color: #f8f6f6;
   display: grid;
   grid-template-columns: 1fr 12fr 4fr;
-  grid-template-rows: 1fr; /* Equal height rows */
+  grid-template-rows: 1fr;
+  /* Equal height rows */
   box-sizing: border-box;
   width: 100%;
 }
@@ -35,6 +36,7 @@ button:active {
 .disabled-button {
   cursor: not-allowed !important;
 }
+
 .disabled-button:active,
 .disabled-button:focus {
   transform: none !important;
