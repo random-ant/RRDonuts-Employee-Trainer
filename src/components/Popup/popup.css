@@ -13,12 +13,14 @@
 
 .popup-box {
   background: rgb(244, 241, 241);
-  padding: 5vmin;
+  padding: 10vmin;
+  padding-left: 10vmin;
+  padding-right: 10vmin;
   border-radius: 1%;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 1);
   text-align: center;
   min-width: 50%;
-  max-width: 80%;
+  max-width: 70%;
   min-height: 60%;
   max-height: 80%;
   transform: translateY(-2vh);
@@ -33,7 +35,7 @@
   font-size: 2.5vw;
 }
 
-.popup-content > input {
+.popup-content>input {
   margin-top: 3vh;
   width: 20vw;
   height: 5vh;

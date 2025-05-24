@@ -95,10 +95,10 @@ export default function useOrder() {
         if (itemIndices.includes(index)) {
           console.log(item);
           return { ...item, memo: currMemo };
-        } 
+        }
         else return item;
       }
-    ));
+      ));
   }
 
   /**
@@ -114,7 +114,7 @@ export default function useOrder() {
       userOrder.map((item, index) => {
         if (itemIndices.includes(index)) {
           return { ...item, quantity: item.quantity - quantity };
-        } 
+        }
         return item;
       })
     );

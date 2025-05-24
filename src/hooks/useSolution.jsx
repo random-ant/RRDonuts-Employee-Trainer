@@ -14,7 +14,7 @@ export default function useSolution() {
    * @return {String} empty string if successful, error message otherwise
    */
   const checkOrder = () => {
-    // console.log(userOrder);
+    console.log(userOrder);
     var errorMsg = "";
 
     // check customer name
@@ -23,8 +23,8 @@ export default function useSolution() {
 
     // check if extra items existsD
     for (const item of userOrder) {
-      if (!currSolution.parts.has(item.id) && !currSolution.additional_parts.has(item.id)) {
-        errorMsg = "Order contains an extra item that shouldn't be there";
+      if (!currSolution.parts.has(item.id)) {
+        errorMsg = `Order contains extra items \n(${getItem(item.id).display_name})`;
         break;
       }
     }
@@ -35,44 +35,11 @@ export default function useSolution() {
       if (!orderItem) {
         errorMsg = `There is an item missing from the order\n(${getItem(partId).display_name})`;
         break;
-      } else if (
-        orderItem.quantity !== partData.amount &&
-        orderItem.quantity !==
-          partData.amount + currSolution.additional_parts.get(partId).amount
-      ) {
+      } else if (orderItem.quantity !== partData.amount) {
         errorMsg = `Wrong amount of a ${orderItem.name} in order`;
         break;
       }
     }
-
-    // check if there's a note in the order (make sure everything else is correct first)
-    // if (currSolution.note && errorMsg === "") {
-    //   // check if additional items have been added
-    //   let hasAdditionalItems = true;
-    //   for (const [addItemId, addItemData] of currSolution.additional_parts.entries()) {
-    //     const orderItem = userOrder.find((item) => item.id === addItemId);
-
-    //     // if the item is not in the order, it means that the order is incorrect
-    //     if (!orderItem) {
-    //       hasAdditionalItems = false;
-    //       break;
-    //     }
-
-    //     let amountNeeded = addItemData.amount;
-    //     if (currSolution.parts.has(addItemId))
-    //       amountNeeded += currSolution.parts.get(addItemId).amount;
-
-    //     // if the item is in the order, check if the quantity is correct
-    //     if (orderItem.quantity !== amountNeeded) {
-    //       hasAdditionalItems = false;
-    //       break;
-    //     }
-    //   }
-
-    //   if (!hasAdditionalItems) {
-    //     errorMsg = `NOTE: ${currSolution.note}`;
-    //   }
-    // }
 
     // reset everything if the order is correct
     if (errorMsg === "") {
