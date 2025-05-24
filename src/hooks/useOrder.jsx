@@ -40,13 +40,13 @@ export default function useOrder() {
       getMemo()
     );
 
-    // check for drink modifications
+    // check for drink modifications (for valid drinks)
     if (getItem(itemID).display_name.includes("REGULAR")) {
       // change display names in order panel
       if (getModifications().includes("large")) {
-        itemObj.name = `${itemObj.name} (LRG)`;
+        itemObj.name = `${itemObj.name}  (LRG)`;
       } else {
-        itemObj.name = `${itemObj.name} (REG)`;
+        itemObj.name = `${itemObj.name}  (REG)`;
       }
     }
 

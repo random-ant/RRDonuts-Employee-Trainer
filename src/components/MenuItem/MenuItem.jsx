@@ -31,8 +31,6 @@ export default function MenuItem({
   let item_name = getItem(itemID).display_name;
   if (display) item_name = display;
 
-  // if it is a drink, then need to add either "REG" or "LRG" to the end of the name
-
   let multiplier = 1;
   if (isDozen) multiplier = 12;
 
