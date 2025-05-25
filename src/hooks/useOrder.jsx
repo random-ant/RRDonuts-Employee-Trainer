@@ -23,14 +23,20 @@ export default function useOrder() {
    * Adds an item to the cart. Automatically gets the needed modifications and memo, then resets them.
    * 
    * @param {number} itemID The ID of the item to add to the cart.
-   * @param {string} itemName The name that will displayed in the cart.
+   * @param {string} itemName The name that will displayed in the cart. If left empty, it will use the name stored in the menuItem.js file.
    * @param {number} quantityMultiplier How much of the item to add. Default is 1.
    * @returns {void}
    */
-  const addToCart = (itemID, itemName, quantityMultiplier = 1) => {
-    const item = getItem(itemID);
-    const amountToAdd = quantityMultiplier * currItemQuantity;
+  const addToCart = (itemID, quantityMultiplier = 1) => {
 
+    // if drink needs to be converted to a LARGE, then add 1 to the ID
+    if (getItem(itemID).display_name.includes("REG") && getModifications().includes("large")) {
+      itemID++;
+    }
+
+    const item = getItem(itemID);
+    const itemName = getItem(itemID).display_name;
+    const amountToAdd = quantityMultiplier * currItemQuantity;
     const itemObj = new OItem(
       itemID,
       itemName,
@@ -39,16 +45,6 @@ export default function useOrder() {
       getModifications(),
       getMemo()
     );
-
-    // check for drink modifications (for valid drinks)
-    if (getItem(itemID).display_name.includes("REGULAR")) {
-      // change display names in order panel
-      if (getModifications().includes("large")) {
-        itemObj.name = `${itemObj.name}  (LRG)`;
-      } else {
-        itemObj.name = `${itemObj.name}  (REG)`;
-      }
-    }
 
     // remove the current stored modifcations and memo
     clearModsAndMemo();

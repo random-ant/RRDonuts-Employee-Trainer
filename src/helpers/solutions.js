@@ -46,8 +46,8 @@ const SOLUTION_LITERALS = [
     items: [
       { id: 101, quantity: 3 },
       { id: 108, quantity: 12 },
-      { id: 1006, quantity: 2 },
-      { id: 1154, quantity: 3 },
+      { id: 1008, quantity: 2 },
+      { id: 1069, quantity: 3 },
     ],
   },
 
@@ -57,10 +57,9 @@ const SOLUTION_LITERALS = [
     prompt_note: "Ask if they want the 2dz donut holes in separate bags or one bag. Assume they wanted a separate bag.",
     items: [
       { id: 110, quantity: 1 },
-      { id: 108, quantity: 24 },
-      { id: 1007, quantity: 1 },
-      { id: 602, quantity: 1 },
       { id: 108, quantity: 24, modifiers: ["MEMO: separate"] },
+      { id: 1009, quantity: 1 },
+      { id: 602, quantity: 1 },
     ],
   },
 
@@ -72,7 +71,7 @@ const SOLUTION_LITERALS = [
       { id: 301, quantity: 1 },
       { id: 302, quantity: 1 },
       { id: 501, quantity: 1 },
-      { id: 1022, quantity: 1 },
+      { id: 1005, quantity: 1 },
     ],
   },
 
@@ -87,14 +86,14 @@ const SOLUTION_LITERALS = [
       { id: 106, quantity: 2 },
       { id: 303, quantity: 1 },
       { id: 108, quantity: 12 },
-      { id: 1012, quantity: 1, modifiers: ["large"] },
+      { id: 1018, quantity: 1 },
     ],
   },
 
   {
     customer_name: "Daniel",
     prompt: "Can I have 1 large jalapeño cheese kolache, 1 regular cheese kolache, 1 TX-sized cinnamon roll, and 1 regular coffee?",
-    prompt_note: "Ask if they want cream and sugar. Assume yes for both.",
+    prompt_note: "Ask if they want cream and sugar. Assume yes for both. You will need to use the MEMO modifier for this.",
     items: [
       { id: 604, quantity: 1 },
       { id: 602, quantity: 1 },
@@ -106,7 +105,7 @@ const SOLUTION_LITERALS = [
   {
     customer_name: "Sophia",
     prompt: "Can I have 1dz glazed donuts in two separate boxes?",
-    prompt_note: "Type in memo: “2bx of 6 glazed donuts.”",
+    prompt_note: "Type in MEMO: “2bx of 6 glazed donuts.”",
     items: [
       { id: 101, quantity: 12, modifiers: ["MEMO: 2bx of 6 glazed donuts"] },
     ],
@@ -122,17 +121,17 @@ const SOLUTION_LITERALS = [
       { id: 507, quantity: 2 },
       { id: 505, quantity: 3 },
       { id: 104, quantity: 2 },
-      { id: 1009, quantity: 3 },
+      { id: 1011, quantity: 3 },
     ],
   },
 
   {
     customer_name: "Keisha",
-    prompt: "Can I have 2 glazed, 1dz donut holes, and 1 reg Dr. Pepper?",
+    prompt: "Can I have 2 glazed, 1dz donut holes, and 1 large Dr. Pepper?",
     items: [
       { id: 101, quantity: 2 },
       { id: 108, quantity: 12 },
-      { id: 1012, quantity: 1 },
+      { id: 1018, quantity: 1 },
     ],
   },
 
@@ -143,7 +142,7 @@ const SOLUTION_LITERALS = [
       { id: 105, quantity: 1 },
       { id: 106, quantity: 1 },
       { id: 603, quantity: 1 },
-      { id: 1022, quantity: 1 },
+      { id: 1005, quantity: 1 },
     ],
   },
 
@@ -154,7 +153,7 @@ const SOLUTION_LITERALS = [
       { id: 201, quantity: 1 },
       { id: 501, quantity: 1 },
       { id: 303, quantity: 1 },
-      { id: 1157, quantity: 1, modifiers: ["large"] },
+      { id: 1076, quantity: 1 },
     ],
   },
 
@@ -165,7 +164,7 @@ const SOLUTION_LITERALS = [
       { id: 101, quantity: 3 },
       { id: 402, quantity: 1 },
       { id: 306, quantity: 1 },
-      { id: 1009, quantity: 1 },
+      { id: 1011, quantity: 1 },
     ],
   },
 
@@ -176,19 +175,19 @@ const SOLUTION_LITERALS = [
       { id: 108, quantity: 12 },
       { id: 505, quantity: 1 },
       { id: 305, quantity: 1 },
-      { id: 1001, quantity: 1, modifiers: ["large"] },
+      { id: 1002, quantity: 1 },
     ],
   },
 
   {
     customer_name: "Carlos",
     prompt: "Can I have 2 chocolate cake, 2 reg sausage kolaches, 1dz glazed, and 1 reg Starry?",
-    prompt_note: "All meat kolaches come with sausage, but ask if the customer wants it with cheese or not. Assume they don't.",
+    prompt_note: "Starry = Sierra Mist. All meat kolaches come with sausage, but ask if the customer wants it with cheese or not. Assume they don't.",
     items: [
       { id: 202, quantity: 2 },
       { id: 601, quantity: 2 },
       { id: 101, quantity: 12 },
-      { id: 1010, quantity: 1 },
+      { id: 1021, quantity: 1 },
     ],
   },
 
@@ -199,7 +198,7 @@ const SOLUTION_LITERALS = [
       { id: 401, quantity: 1 },
       { id: 505, quantity: 1 },
       { id: 302, quantity: 1 },
-      { id: 1017, quantity: 1, modifiers: ["large"] },
+      { id: 1028, quantity: 1 },
     ],
   },
 
@@ -211,7 +210,7 @@ const SOLUTION_LITERALS = [
       { id: 102, quantity: 1 },
       { id: 604, quantity: 1 },
       { id: 307, quantity: 1 },
-      { id: 1004, quantity: 1 },
+      { id: 1006, quantity: 1 },
     ],
   },
 
@@ -222,7 +221,7 @@ const SOLUTION_LITERALS = [
       { id: 101, quantity: 12 },
       { id: 109, quantity: 1 },
       { id: 603, quantity: 2 },
-      { id: 1017, quantity: 1 },
+      { id: 1027, quantity: 1 },
     ],
   },
 
@@ -232,19 +231,19 @@ const SOLUTION_LITERALS = [
     items: [
       { id: 402, quantity: 2 },
       { id: 301, quantity: 1 },
-      { id: 1152, quantity: 1, modifiers: ["large"] },
+      { id: 1068, quantity: 1 },
     ],
   },
 
   {
     customer_name: "Jasmine",
-    prompt: "Can I have 1 blueberry cake, 1 cinnamon roll, 1dz donut holes, 2 strawberry-filled donuts, and 1 reg Dr. Pepper?",
+    prompt: "Can I have 1 blueberry cake, 1 cinnamon roll, 1dz donut holes, 2 strawberry-filled donuts, and 1 reg Diet Dr. Pepper?",
     items: [
       { id: 203, quantity: 1 },
       { id: 501, quantity: 1 },
       { id: 108, quantity: 12 },
       { id: 306, quantity: 2 },
-      { id: 1012, quantity: 1 },
+      { id: 1019, quantity: 1 },
     ],
   },
 
@@ -255,7 +254,7 @@ const SOLUTION_LITERALS = [
       { id: 110, quantity: 1 },
       { id: 602, quantity: 2 },
       { id: 305, quantity: 1 },
-      { id: 1155, quantity: 1, modifiers: ["large"] },
+      { id: 1072, quantity: 1 },
     ],
   },
 
@@ -266,30 +265,30 @@ const SOLUTION_LITERALS = [
       { id: 508, quantity: 1 },
       { id: 202, quantity: 1 },
       { id: 303, quantity: 2 },
-      { id: 1003, quantity: 1 },
+      { id: 1005, quantity: 1 },
     ],
   },
 
   {
     customer_name: "Darius",
-    prompt: "Can I have 3 glazed, 1 reg sausage & cheese kolache, 1 apple fritter, 1 eclair, and 1 reg Pepsi?",
+    prompt: "Can I have 3 glazed, 1 reg sausage & cheese kolache, 1 apple fritter, 1 eclair, and a regular Pepsi Zero?",
     items: [
       { id: 101, quantity: 3 },
       { id: 601, quantity: 1 },
       { id: 402, quantity: 1 },
       { id: 301, quantity: 1 },
-      { id: 1009, quantity: 1 },
+      { id: 1015, quantity: 1 },
     ],
   },
 
   {
     customer_name: "Natalie",
-    prompt: "Can I have 1 cream cheese fruit kolache, 1 cinnamon roll, 1dz mixed donuts, and 1 large hot black coffee?",
+    prompt: "Can I have 1 cream cheese fruit kolache, 1 cinnamon roll, 1dz mixed donuts, and 1 large hot black decaf?",
     items: [
       { id: 505, quantity: 1 },
       { id: 501, quantity: 1 },
       { id: 111, quantity: 1 },
-      { id: 1001, quantity: 1, modifiers: ["large"] },
+      { id: 1004, quantity: 1 },
     ],
   },
 
@@ -301,7 +300,7 @@ const SOLUTION_LITERALS = [
       { id: 402, quantity: 1 },
       { id: 108, quantity: 12 },
       { id: 101, quantity: 1 },
-      { id: 1016, quantity: 1, modifiers: ["large"] },
+      { id: 1026, quantity: 1 },
     ],
   },
 
@@ -313,7 +312,7 @@ const SOLUTION_LITERALS = [
       { id: 302, quantity: 1 },
       { id: 603, quantity: 1 },
       { id: 101, quantity: 12 },
-      { id: 1017, quantity: 1 },
+      { id: 1027, quantity: 1 },
     ],
   },
 
@@ -324,7 +323,7 @@ const SOLUTION_LITERALS = [
       { id: 401, quantity: 1 },
       { id: 602, quantity: 2 },
       { id: 307, quantity: 1 },
-      { id: 1155, quantity: 1, modifiers: ["large"] },
+      { id: 1072, quantity: 1 },
     ],
   },
 
@@ -335,7 +334,7 @@ const SOLUTION_LITERALS = [
       { id: 101, quantity: 2 },
       { id: 108, quantity: 12 },
       { id: 301, quantity: 1 },
-      { id: 1020, quantity: 1 },
+      { id: 1033, quantity: 1 },
     ],
   },
 
@@ -347,7 +346,7 @@ const SOLUTION_LITERALS = [
       { id: 202, quantity: 1 },
       { id: 303, quantity: 1 },
       { id: 604, quantity: 1 },
-      { id: 1151, quantity: 1 },
+      { id: 1065, quantity: 1 },
     ],
   },
 
@@ -358,18 +357,18 @@ const SOLUTION_LITERALS = [
       { id: 105, quantity: 1 },
       { id: 602, quantity: 2 },
       { id: 306, quantity: 1 },
-      { id: 1157, quantity: 1, modifiers: ["large"] },
+      { id: 1076, quantity: 1 },
     ],
   },
 
   {
     customer_name: "Zoe",
-    prompt: "Can I have 1 cream Bismarck, 1 eclair, 1 apple fritter, and 1 reg Pepsi?",
+    prompt: "Can I have 1 cream Bismarck, 1 eclair, 1 apple fritter, and a Diet Pepsi?",
     items: [
       { id: 302, quantity: 1 },
       { id: 301, quantity: 1 },
       { id: 402, quantity: 1 },
-      { id: 1009, quantity: 1 },
+      { id: 1013, quantity: 1 },
     ],
   },
 
@@ -380,18 +379,19 @@ const SOLUTION_LITERALS = [
       { id: 101, quantity: 2 },
       { id: 203, quantity: 1 },
       { id: 603, quantity: 1 },
-      { id: 1155, quantity: 1, modifiers: ["large"] },
+      { id: 1072, quantity: 1 },
     ],
   },
 
   {
     customer_name: "Grace",
-    prompt: "Can I have 1 cherry-filled donut, 2 cinnamon rolls, 1dz donut holes, and 1 reg Starry?",
+    prompt: "Can I have 1 cherry-filled donut, 2 cinnamon rolls, 1dz donut holes, and 1 big Starry?",
+    prompt_note: "Starry = Sierra Mist",
     items: [
       { id: 307, quantity: 1 },
       { id: 501, quantity: 2 },
       { id: 108, quantity: 12 },
-      { id: 1014, quantity: 1 },
+      { id: 1022, quantity: 1 },
     ],
   },
 
@@ -402,7 +402,7 @@ const SOLUTION_LITERALS = [
       { id: 604, quantity: 1 },
       { id: 110, quantity: 1 },
       { id: 305, quantity: 1 },
-      { id: 1152, quantity: 1, modifiers: ["large"] },
+      { id: 1068, quantity: 1 },
     ],
   },
 
@@ -413,7 +413,7 @@ const SOLUTION_LITERALS = [
       { id: 506, quantity: 1 },
       { id: 202, quantity: 1 },
       { id: 505, quantity: 1 },
-      { id: 1009, quantity: 1 },
+      { id: 1017, quantity: 1 },
     ],
   },
 
@@ -424,7 +424,7 @@ const SOLUTION_LITERALS = [
       { id: 401, quantity: 1 },
       { id: 602, quantity: 1 },
       { id: 306, quantity: 2 },
-      { id: 1151, quantity: 1 },
+      { id: 1065, quantity: 1 },
     ],
   },
 
@@ -435,7 +435,7 @@ const SOLUTION_LITERALS = [
       { id: 108, quantity: 12 },
       { id: 508, quantity: 1 },
       { id: 303, quantity: 1 },
-      { id: 1017, quantity: 1, modifiers: ["large"] },
+      { id: 1028, quantity: 1 },
     ],
   },
 
@@ -446,7 +446,7 @@ const SOLUTION_LITERALS = [
       { id: 101, quantity: 3 },
       { id: 603, quantity: 1 },
       { id: 302, quantity: 1 },
-      { id: 1020, quantity: 1 },
+      { id: 1033, quantity: 1 },
     ],
   },
 
@@ -457,19 +457,19 @@ const SOLUTION_LITERALS = [
       { id: 109, quantity: 1 },
       { id: 101, quantity: 2 },
       { id: 108, quantity: 12 },
-      { id: 1155, quantity: 1, modifiers: ["large"] },
+      { id: 1072, quantity: 1 },
     ],
   },
 
   {
     customer_name: "Nathan",
     prompt: "Can I have 1 glazed, 1 regular sausage and cheese kolache, half a dz donut holes, and 1 large sweet tea?",
-    prompt_note: "(half a dozen = 6)",
+    prompt_note: "half a dozen = 6",
     items: [
       { id: 101, quantity: 1 },
       { id: 602, quantity: 1 },
       { id: 108, quantity: 6 },
-      { id: 1017, quantity: 1, modifiers: ["large"] },
+      { id: 1028, quantity: 1 },
     ],
   },
 ];

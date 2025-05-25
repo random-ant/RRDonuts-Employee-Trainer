@@ -8,7 +8,7 @@ export default function ImageMenuItem({ itemID, itemName, src, bgColor }) {
   return (
     <button
       className="menu-item"
-      onClick={() => addToCart(itemID, itemName, 1)}
+      onClick={() => addToCart(itemID, 1)}
       style={{
         backgroundImage: `url(${path})`,
         backgroundColor: bgColor,

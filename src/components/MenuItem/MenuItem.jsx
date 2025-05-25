@@ -37,7 +37,7 @@ export default function MenuItem({
   return (
     <button
       className={"menu-item " + className}
-      onClick={() => addToCart(itemID, item_name, multiplier)}
+      onClick={() => addToCart(itemID, multiplier)}
       style={{
         backgroundColor: color,
         color: calculateTextColor(color),
