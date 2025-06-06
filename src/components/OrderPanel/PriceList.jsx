@@ -6,7 +6,7 @@ export default function PriceList() {
 
   const subtotal = getSubtotal();
   const priceDiscount = getPriceDiscount();
-  const tax = (subtotal - priceDiscount) * 0.07;
+  const tax = 0;
   const finalPrice = subtotal - priceDiscount + tax;
 
   return (
