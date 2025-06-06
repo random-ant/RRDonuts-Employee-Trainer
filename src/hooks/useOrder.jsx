@@ -132,13 +132,18 @@ export default function useOrder() {
    * Calculates if there is a price break discount for the current order and returns the discount amount.
    */
   const getPriceDiscount = () => {
+    const undiscountedIDs = [108, 109, 110, 111, 209];
     let regDonuts = userOrder.reduce((total, item) => {
-      if (item.id <= 299 && !item.name.includes("DOZ")) return total + item.quantity;
+      if (item.id <= 299 && !undiscountedIDs.includes(item.id)) return total + item.quantity;
       else return total;
     }, 0);
 
-    let numDiscounts =
-      Math.floor(regDonuts / 12) + userOrder.filter((item) => item.name.includes("DOZ")).length;
+    let dozItems = userOrder.reduce((total, item) => {
+      if (item.name.includes("DOZ")) return total + item.quantity;
+      else return total;
+    }, 0);
+
+    let numDiscounts = Math.floor(regDonuts / 12) + dozItems;
 
     return numDiscounts * 2.3;
   };
