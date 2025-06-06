@@ -21,14 +21,13 @@ export default function useOrder() {
 
   /**
    * Adds an item to the cart. Automatically gets the needed modifications and memo, then resets them.
-   * 
+   *
    * @param {number} itemID The ID of the item to add to the cart.
    * @param {string} itemName The name that will displayed in the cart. If left empty, it will use the name stored in the menuItem.js file.
    * @param {number} quantityMultiplier How much of the item to add. Default is 1.
    * @returns {void}
    */
   const addToCart = (itemID, quantityMultiplier = 1) => {
-
     // if drink needs to be converted to a LARGE, then add 1 to the ID
     if (getItem(itemID).display_name.includes("REG") && getModifications().includes("large")) {
       itemID++;
@@ -81,7 +80,7 @@ export default function useOrder() {
 
   /**
    * Modify the memos of items from the order given their indices in userOrder. Automatically gets the memo.
-   * 
+   *
    * @param {Array.<number>} itemIndices  - An array of the indices of all items to delete. Each index is the position in userOrder the item is contained at.
    */
   const modifyItemMemos = (itemIndices) => {
@@ -91,15 +90,14 @@ export default function useOrder() {
         if (itemIndices.includes(index)) {
           console.log(item);
           return { ...item, memo: currMemo };
-        }
-        else return item;
-      }
-      ));
-  }
+        } else return item;
+      })
+    );
+  };
 
   /**
    * Deletes a certain amount of each given item from the order. If a given item goes to 0, it is removed completely.
-   * 
+   *
    * @param {Array.<number>} itemIndices  - An array of the indices of all items to delete. Each index is the position in userOrder the item is contained at.
    * @param {number} quantity - The amount of each item to delete. Default is 1.
    * @returns {void}
@@ -119,7 +117,31 @@ export default function useOrder() {
     setUserOrder((prevOrder) => {
       return prevOrder.filter((item) => item.quantity > 0);
     });
-  }
+  };
 
-  return { addToCart, modifyItemMemos, deleteItems };
+  /**
+   * Calculates the total price of all items in the order. Does NOT include taxes or discounts.
+   */
+  const getSubtotal = () => {
+    return userOrder.reduce((total, item) => {
+      return total + item.price * item.quantity;
+    }, 0);
+  };
+
+  /**
+   * Calculates if there is a price break discount for the current order and returns the discount amount.
+   */
+  const getPriceDiscount = () => {
+    let regDonuts = userOrder.reduce((total, item) => {
+      if (item.id <= 299 && !item.name.includes("DOZ")) return total + item.quantity;
+      else return total;
+    }, 0);
+
+    let numDiscounts =
+      Math.floor(regDonuts / 12) + userOrder.filter((item) => item.name.includes("DOZ")).length;
+
+    return numDiscounts * 2.3;
+  };
+
+  return { addToCart, modifyItemMemos, deleteItems, getSubtotal, getPriceDiscount };
 }

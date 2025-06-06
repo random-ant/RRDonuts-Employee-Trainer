@@ -34,7 +34,7 @@ export default function OrderList() {
             {/* {item.mods.map((m, index) => (
               <p key={index}>{m}</p>
             ))} */}
-            <p>{item.memo && item.memo}</p>
+            {item.memo && <p className="order-memo-text">{item.memo}</p>}
           </div>
         </div>
       ))}

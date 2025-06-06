@@ -5,6 +5,8 @@
   flex-direction: column;
   background-color: rgb(206, 206, 206);
   border: 1px solid #1c1c1c;
+  box-sizing: border-box;
+  max-height: 100%;
 }
 
 #name-display {
@@ -19,9 +21,14 @@
 }
 
 .order-list-container {
-  flex: 1 1 auto;
+  max-height: 100%;
+  overflow-y: auto;
+}
+
+.order-list-container {
+  flex: 1;
   /* take remaining space, shrink/grow */
-  overflow: auto;
+  overflow: scroll;
   /* scroll if content overflows */
 }
 
@@ -73,7 +80,7 @@
   color: rgb(0, 51, 255);
 }
 
-.order-modifications>* {
+.order-modifications > * {
   margin-top: 0.8vh;
 }
 

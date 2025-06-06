@@ -28,7 +28,7 @@
   align-items: "center";
 }
 
-.menu-buttons-container > * {
+.menu-buttons-container>* {
   height: 100%;
 }
 
@@ -36,13 +36,15 @@
 
 .menu-page-select {
   display: grid;
-  grid-template-columns: repeat(6, 1fr); /* 5 columns */
-  grid-template-rows: repeat(2, 1fr); /* 2 rows */
+  grid-template-columns: repeat(6, 1fr);
+  /* 5 columns */
+  grid-template-rows: repeat(2, 1fr);
+  /* 2 rows */
   grid-auto-rows: 1fr;
   gap: 5px;
 }
 
-.menu-page-select > button {
+.menu-page-select>button {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -58,8 +60,9 @@
   cursor: pointer;
 }
 
-.menu-page-select > button:active {
-  transform: translateY(2px); /* Push down effect */
+.menu-page-select>button:active {
+  transform: translateY(2px);
+  /* Push down effect */
 }
 
 #credit-card,
