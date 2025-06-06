@@ -3,6 +3,7 @@ import { CustomerNameContext } from "../../helpers/context";
 import OrderList from "./OrderList";
 import Prompter from "../Prompter/Prompter";
 import Popup from "../Popup/Popup";
+import PriceList from "./PriceList";
 import useSolution from "../../hooks/useSolution";
 import "./orders.css";
 
@@ -17,6 +18,7 @@ export default function OrderPanel() {
       <Prompter />
       <p id="name-display">{customerName ? customerName : "NEW ORDER"}</p>
       <OrderList />
+      <PriceList />
 
       {/* TODO: add money summary */}
 

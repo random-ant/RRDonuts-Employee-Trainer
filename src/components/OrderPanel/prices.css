@@ -1,0 +1,30 @@
+.price-container {
+  width: 100%;
+  padding-right: 0.6vw;
+  padding-left: 0.4vw;
+  padding-top: 0.5vh;
+  margin-bottom: 0.5vh;
+  font-size: 1vw;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  border-top: 2px solid rgb(235, 235, 235);
+}
+
+.price-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.price-label {
+  text-align: right;
+}
+
+.price-cost {
+  text-align: right;
+}
+
+.final-price-row {
+  font-weight: bold;
+  font-size: 1.2em;
+  margin-top: 0.6vh;
+}

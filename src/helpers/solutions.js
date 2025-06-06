@@ -150,7 +150,7 @@ const SOLUTION_LITERALS = [
     customer_name: "Sophia",
     prompt: "Can I have 1 blueberry cake, 1 cinnamon roll, 1 Bavarian cream donut, and 1 large iced vanilla coffee?",
     items: [
-      { id: 201, quantity: 1 },
+      { id: 203, quantity: 1 },
       { id: 501, quantity: 1 },
       { id: 303, quantity: 1 },
       { id: 1076, quantity: 1 },
